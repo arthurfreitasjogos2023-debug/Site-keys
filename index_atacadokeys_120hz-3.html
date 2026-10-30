@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d11">
+<title>MARTINS KEYS — Steam Keys Originais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#000;--bg2:#0a0a0a;--surface:#111;--surface2:#181818;
+  --line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.16);
+  --txt:#eaeef3;--muted:#98a2b1;--muted2:#717c8b;
+  --accent:#22c7ff;--accent2:#2f8bff;--accentd:#06141f;--good:#39e0a0;--amber:#ffb33a;
+  --r:12px;--maxw:1180px;
+}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased;text-rendering:optimizeSpeed;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input{font-family:inherit}
+a{color:inherit;text-decoration:none}
+button,a,.card,.sp{touch-action:manipulation}
+/* one cheap STATIC backdrop glow (painted once, no animation) */
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(1100px 520px at 50% -10%,rgba(47,123,255,.16),transparent 60%),radial-gradient(820px 460px at 92% -4%,rgba(34,199,255,.10),transparent 55%)}
+
+/* ===== Sticky header ===== */
+.topbar{position:sticky;top:0;z-index:50;background:var(--bg)}
+.brandbar{background:#1755e8}
+.brandbar-in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:12px;padding:12px 14px;padding-top:max(12px,env(safe-area-inset-top))}
+.icn{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.16);color:#fff;flex:0 0 auto;transition:background .15s}
+.icn:active{background:rgba(255,255,255,.28)}
+.icn svg{width:21px;height:21px}
+.brand{flex:1;text-align:center;font-weight:800;font-style:italic;letter-spacing:.5px;font-size:23px;color:#fff;text-shadow:0 1px 1px rgba(0,0,40,.18);user-select:none}
+.searchrow{max-width:var(--maxw);margin:0 auto;padding:10px 14px 14px;background:#1755e8;border-bottom:none;position:relative}
+.search{display:flex;align-items:center;gap:11px;background:#fff;border:none;border-radius:999px;padding:13px 18px;transition:box-shadow .15s}
+.search:focus-within{box-shadow:0 0 0 3px rgba(255,255,255,.4)}
+.search svg{width:20px;height:20px;color:#888;flex:0 0 auto}
+.search input{flex:1;background:none;border:none;outline:none;color:#222;font-size:16px}
+.search input::placeholder{color:#aaa}
+
+/* ===== Banner ===== */
+.banner{max-width:var(--maxw);margin:16px auto 4px;padding:0 14px}
+.banner-in{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:linear-gradient(120deg,#0c1830,#0a1322 55%,#0c1a2b);padding:22px 20px}
+.banner-in::after{content:'';position:absolute;right:-50px;top:-50px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(34,199,255,.20),transparent 65%);pointer-events:none}
+.banner h1{position:relative;font-size:21px;font-weight:800;letter-spacing:.3px;margin-bottom:7px}
+.banner h1 .cy{color:var(--accent)}
+.banner p{position:relative;color:var(--muted);font-size:14px;max-width:660px}
+.badges{position:relative;display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#cfe9ff;background:rgba(34,199,255,.10);border:1px solid rgba(34,199,255,.22);padding:6px 11px;border-radius:999px}
+.badge.g{color:#bdedd4;background:rgba(57,224,160,.10);border-color:rgba(57,224,160,.28)}
+
+/* ===== Catalog banner + inner search (Atacado Keys style) ===== */
+.cat-banner{max-width:var(--maxw);margin:14px auto 0;padding:0 14px}
+.cat-banner-img{position:relative;border-radius:14px;overflow:hidden;height:140px;background:linear-gradient(120deg,#0a0c14,#0a1020);display:flex;align-items:center;justify-content:center}
+.steam-chars{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none;overflow:hidden}
+.steam-chars img{height:100%;width:auto;object-fit:contain;opacity:.85}
+.cat-banner-overlay{position:relative;z-index:1;text-align:center}
+.keys-steam-text{display:block;font-size:42px;font-weight:900;font-style:italic;color:#fff;line-height:1;text-shadow:0 2px 14px rgba(0,0,0,.9);letter-spacing:2px}
+.keys-steam-text .ks{color:#22c7ff}
+.entrega-tag{display:block;font-size:10px;font-weight:700;letter-spacing:4px;color:rgba(255,255,255,.75);margin-top:5px;text-transform:uppercase}
+.cat-inner-search-wrap{max-width:var(--maxw);margin:12px auto 0;padding:0 14px}
+.cat-inner-search{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line2);border-radius:12px;padding:13px 16px;cursor:text}
+.cat-inner-search svg{width:20px;height:20px;color:var(--muted2);flex:0 0 auto}
+.cat-inner-search span{color:var(--muted2);font-size:15px}
+/* ===== Catalog ===== */
+.catalog{max-width:var(--maxw);margin:18px auto 10px;padding:0 14px}
+.cat-head{display:flex;align-items:center;gap:10px;margin:14px 2px 14px}
+.cat-back{width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--line2);color:var(--txt);font-size:20px;line-height:1;display:grid;place-items:center;flex:0 0 auto;cursor:default}
+.cat-head h2{font-size:19px;font-weight:800;letter-spacing:.2px}
+.cat-head .count{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+@media(min-width:560px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:820px){.grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+@media(min-width:1060px){.grid{grid-template-columns:repeat(5,1fr)}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .18s ease,transform .18s ease,background-color .18s ease}
+.card:hover{border-color:rgba(34,199,255,.45);transform:translateY(-3px);background:var(--surface2)}
+.card:active{transform:translateY(-1px)}
+.card-media{position:relative;aspect-ratio:460/215;background:#0c0f14}
+.card-media .ph,.card-media img{position:absolute;inset:0;width:100%;height:100%}
+.card-media .ph{z-index:0}
+.card-media img{z-index:1;object-fit:cover;opacity:0;transition:opacity .35s ease;background:#0c0f14}
+.card-media img.loaded{opacity:1}
+.ribbon{position:absolute;top:8px;left:8px;z-index:2;font-size:10px;font-weight:800;letter-spacing:.4px;color:#241803;background:linear-gradient(90deg,#ffd16a,#ffae3a);padding:4px 8px;border-radius:7px}
+.card-body{padding:11px 12px 13px;display:flex;flex-direction:column;gap:11px;flex:1}
+.card-title{font-size:14px;font-weight:600;line-height:1.3;color:var(--txt);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:36px}
+.btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-size:13px;font-weight:700;letter-spacing:.2px;color:#111;background:#fff;border-radius:10px;padding:10px 12px;transition:filter .15s ease,transform .1s ease;border:none}
+.btn:hover{filter:brightness(.93)}
+.btn:active{transform:scale(.98)}
+.btn svg{width:15px;height:15px;color:#111}
+
+/* placeholder cover (no image available) */
+.ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:var(--g);position:relative;overflow:hidden;padding:6px}
+.ph::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.5))}
+.ph>*{position:relative}
+.ph .mono{font-weight:800;font-size:24px;color:#fff;letter-spacing:1px;line-height:1}
+.ph .ph-name{font-size:10px;font-weight:600;color:rgba(255,255,255,.95);text-align:center;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ph .ph-tag{font-size:8px;font-weight:700;letter-spacing:.8px;color:rgba(255,255,255,.85);background:rgba(0,0,0,.3);padding:2px 6px;border-radius:5px;line-height:1}
+
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:60px 20px;font-size:15px}
+.empty .big{font-size:40px;margin-bottom:10px;opacity:.8}
+
+/* ===== Featured / Destaques ===== */
+.featured-wrap{max-width:var(--maxw);margin:18px auto 0;padding:0 14px}
+.featured-head{font-size:13px;font-weight:800;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.featured-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.featured-scroll::-webkit-scrollbar{display:none}
+.feat-card{flex:0 0 220px;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .18s,transform .18s}
+.feat-card:hover{border-color:rgba(34,199,255,.45);transform:translateY(-3px)}
+.feat-card:active{transform:translateY(-1px)}
+.feat-img{position:relative;aspect-ratio:460/215;background:#0c0f14;overflow:hidden}
+.feat-img .ph{z-index:0}
+.feat-img img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s;background:#0c0f14}
+.feat-img img.loaded{opacity:1}
+.feat-img .ph{position:absolute;inset:0;width:100%;height:100%}
+.feat-ribbon{position:absolute;top:8px;left:8px;z-index:2;font-size:10px;font-weight:800;color:#241803;background:linear-gradient(90deg,#ffd16a,#ffae3a);padding:4px 8px;border-radius:7px}
+.feat-body{padding:10px 12px 12px}
+.feat-name{font-size:13px;font-weight:700;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:8px}
+.feat-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#111;background:#fff;border-radius:8px;padding:8px 11px;width:100%;justify-content:center}
+
+/* ===== Footer ===== */
+.foot{border-top:1px solid var(--line);background:var(--bg2);margin-top:34px}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding:26px 16px 42px;color:var(--muted2);font-size:12.5px;line-height:1.65}
+.foot-in .fbrand{font-weight:800;font-style:italic;color:var(--txt);font-size:15px;letter-spacing:.4px;margin-bottom:8px;display:block}
+.foot-in b{color:var(--muted)}
+
+/* ===== Modal / activation demo ===== */
+.overlay{position:fixed;inset:0;z-index:100;display:none;align-items:flex-start;justify-content:center;background:rgba(4,7,12,.74);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.overlay.open{display:flex}
+.modal{width:100%;max-width:880px;background:var(--bg2);border:1px solid var(--line2);min-height:100%}
+@media(min-width:760px){.overlay{align-items:center;padding:24px}.modal{border-radius:20px;min-height:0;overflow:hidden}}
+.modal-top{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:12px;padding:13px 15px;background:linear-gradient(90deg,#12233f,#0f1f31);border-bottom:1px solid var(--line)}
+.mt-cover{position:relative;width:66px;height:31px;border-radius:6px;overflow:hidden;flex:0 0 auto;background:#0c0f14}
+.mt-cover .ph,.mt-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mt-cover .ph .ph-name,.mt-cover .ph .ph-tag{display:none}
+.mt-cover .ph .mono{font-size:13px}
+.mt-info{flex:1;min-width:0}
+.mt-info h3{font-size:16px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mt-sub{font-size:11.5px;color:var(--muted)}
+.x{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;flex:0 0 auto;font-size:15px;color:#cdd6e0;transition:background .15s}
+.x:hover{background:rgba(255,255,255,.16)}
+.modal-body{padding:16px}
+.mbadges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px}
+.mb{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:999px;border:1px solid var(--line2);color:#cfe9ff;background:rgba(34,199,255,.08)}
+.mb.good{color:#bdedd4;background:rgba(57,224,160,.10);border-color:rgba(57,224,160,.3)}
+.mb.amber{color:#ffe0ad;background:rgba(255,179,58,.10);border-color:rgba(255,179,58,.3)}
+
+.steps{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;scrollbar-width:none}
+.steps::-webkit-scrollbar{display:none}
+.sp{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);color:var(--muted);cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.sp .sp-n{font-family:'Share Tech Mono';font-size:12px;color:var(--muted2)}
+.sp .sp-l{font-size:12.5px;font-weight:600;white-space:nowrap}
+.sp.active{background:rgba(34,199,255,.12);border-color:rgba(34,199,255,.5);color:#dff4ff}
+.sp.active .sp-n{color:var(--accent)}
+.sp.done{color:#bfe9d5;border-color:rgba(57,224,160,.35)}
+.sp.done .sp-n{color:var(--good)}
+.progress{height:4px;background:var(--surface);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.progress>i{display:block;height:100%;width:20%;background:linear-gradient(90deg,#27c8ff,#2f8bff);border-radius:99px;transition:width .35s ease}
+
+.stage{min-height:210px;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px;overflow:hidden}
+.stage-anim{animation:sIn .3s ease both}
+@keyframes sIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel-txt h4{font-size:16px;font-weight:800;margin-bottom:6px}
+.panel-txt p{color:var(--muted);font-size:13.5px;line-height:1.55}
+.nav{display:flex;gap:10px;margin-top:16px}
+.nav button{flex:1;padding:13px;border-radius:11px;font-weight:700;font-size:14px;transition:filter .15s,opacity .15s,transform .1s}
+.nav .prev{background:var(--surface);border:1px solid var(--line2);color:var(--txt)}
+.nav .prev:disabled{opacity:.4;cursor:not-allowed}
+.nav .next{background:linear-gradient(90deg,#27c8ff,#2f8bff);color:var(--accentd)}
+.nav .next:hover{filter:brightness(1.07)}
+.nav .next:active{transform:scale(.99)}
+.nav .next:disabled{background:rgba(57,224,160,.18);color:#9fe9c8;cursor:default}
+
+/* stage visuals */
+.sv-pick{display:flex;flex-direction:column;align-items:center;gap:10px}
+.sv-card{width:190px;max-width:70vw;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--surface)}
+.sv-cover{aspect-ratio:460/215;background:#0c0f14}
+.sv-cover img,.sv-cover .ph{width:100%;height:100%;object-fit:cover}
+.sv-cover .ph .ph-tag{display:none}
+.sv-t{padding:9px 10px;font-size:12.5px;font-weight:600;text-align:center}
+.sv-cursor{font-size:24px;animation:tap 1.4s ease-in-out infinite}
+@keyframes tap{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.sv-ticket{width:290px;max-width:100%;border:1px dashed rgba(34,199,255,.4);border-radius:14px;background:linear-gradient(160deg,#0e1a2b,#0c1420);padding:18px 16px;text-align:center}
+.sv-ticket-h{font-size:11px;font-weight:700;letter-spacing:1px;color:#bfe3ff;margin-bottom:14px}
+.sv-ticket-h .k{color:var(--accent)}
+.sv-key{font-family:'Share Tech Mono';font-size:21px;letter-spacing:2px;color:#eafaff;background:#070c14;border:1px solid var(--line2);border-radius:9px;padding:12px;margin-bottom:12px;word-break:break-all}
+.sv-copy{font-size:12.5px;font-weight:700;color:var(--accentd);background:linear-gradient(90deg,#27c8ff,#2f8bff);padding:9px 16px;border-radius:9px}
+.sv-ticket-f{margin-top:12px;font-size:11px;color:var(--good);font-weight:600}
+.steam-win{width:340px;max-width:100%;border:1px solid var(--line2);border-radius:11px;overflow:hidden;background:#0f141b;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.steam-bar{display:flex;align-items:center;gap:7px;padding:9px 12px;background:#0a0e14;border-bottom:1px solid var(--line)}
+.steam-bar .dot{width:10px;height:10px;border-radius:50%}
+.dot.r{background:#ff5f57}.dot.y{background:#febc2e}.dot.g{background:#28c840}
+.steam-title{margin-left:6px;font-size:11px;font-weight:700;letter-spacing:1.5px;color:#8aa0b6}
+.steam-menu{display:flex;gap:2px;padding:6px 8px;background:#10161e;border-bottom:1px solid var(--line);font-size:12px}
+.steam-menu .sm{padding:5px 10px;border-radius:6px;color:#9fb0c2}
+.steam-menu .sm.hl{background:rgba(34,199,255,.16);color:#dff3ff}
+.steam-drop{padding:6px}
+.steam-drop .sd{padding:10px 12px;font-size:12.5px;color:#aebccb;border-radius:7px}
+.steam-drop .sd.hl{background:rgba(34,199,255,.14);color:#eafaff;font-weight:600}
+.wiz{padding:16px}
+.wiz-t{font-size:14px;font-weight:800;margin-bottom:10px;color:#eafaff}
+.wiz-p{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.wiz-field{font-family:'Share Tech Mono';font-size:17px;letter-spacing:2px;color:#eafaff;background:#070c14;border:1px solid rgba(34,199,255,.4);border-radius:8px;padding:12px;min-height:46px;display:flex;align-items:center;word-break:break-all}
+.caret{color:var(--accent);animation:blink 1s steps(1) infinite;margin-left:2px}
+@keyframes blink{50%{opacity:0}}
+.wiz-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+.wiz-btn{font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:8px;background:var(--surface);border:1px solid var(--line2);color:#cdd6e0}
+.wiz-btn.pri{background:linear-gradient(90deg,#27c8ff,#2f8bff);color:var(--accentd);border:none}
+.lib{display:flex;gap:14px;padding:16px;align-items:center}
+.lib-cover{width:118px;flex:0 0 auto;border-radius:8px;overflow:hidden;aspect-ratio:460/215;background:#0c0f14}
+.lib-cover img,.lib-cover .ph{width:100%;height:100%;object-fit:cover}
+.lib-cover .ph .ph-name,.lib-cover .ph .ph-tag{display:none}
+.lib-cover .ph .mono{font-size:18px}
+.lib-info{flex:1;min-width:0}
+.lib-name{font-size:14px;font-weight:800;margin-bottom:6px}
+.lib-status{font-size:12px;color:var(--good);font-weight:600;margin-bottom:12px}
+.lib-play{font-size:13px;font-weight:800;letter-spacing:.5px;color:#06231a;background:linear-gradient(90deg,#3ee0a0,#27c8a0);padding:10px 20px;border-radius:9px}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);z-index:200;background:#0f1620;border:1px solid var(--line2);color:#eafaff;font-size:13.5px;font-weight:600;padding:12px 18px;border-radius:11px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+
+/* ===== Scroll reveal: itens aparecendo devagar ao rolar ===== */
+.reveal{opacity:0;transform:translateY(34px);filter:blur(4px);transition:opacity .75s ease,transform .75s ease,filter .75s ease}
+.reveal.in-view{opacity:1;transform:translateY(0);filter:blur(0)}
+.card.reveal,.feat-card.reveal{transition:opacity .75s ease,transform .75s ease,filter .75s ease,border-color .18s ease,background-color .18s ease}
+.card.reveal:hover,.feat-card.reveal:hover{transform:translateY(-3px)}
+.card.reveal:not(.in-view),.feat-card.reveal:not(.in-view){pointer-events:none}
+
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important;filter:none!important}}
+
+/* ===== Side Menu ===== */
+.menu-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.6);display:none;backdrop-filter:blur(2px)}
+.menu-overlay.open{display:block}
+.menu-panel{position:absolute;left:0;top:0;bottom:0;width:min(300px,85vw);background:#0d1117;border-right:1px solid var(--line2);display:flex;flex-direction:column;transform:translateX(-100%);transition:transform .28s cubic-bezier(.4,0,.2,1);overflow-y:auto}
+.menu-overlay.open .menu-panel{transform:translateX(0)}
+.menu-header{display:flex;align-items:center;justify-content:space-between;padding:18px 16px 14px;border-bottom:1px solid var(--line);background:#1755e8}
+.menu-title{font-weight:900;font-style:italic;font-size:18px;letter-spacing:.5px;color:#fff}
+.menu-close{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.18);color:#fff;font-size:14px;display:grid;place-items:center}
+.menu-section{padding:14px 12px 6px}
+.menu-label{font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--muted2);padding:0 6px;margin-bottom:6px}
+.menu-item{width:100%;display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:10px;color:var(--muted);font-size:14px;font-weight:600;text-align:left;transition:background .14s,color .14s;margin-bottom:2px}
+.menu-item:hover,.menu-item.active{background:rgba(34,199,255,.10);color:#dff4ff}
+.menu-item.active{border-left:3px solid var(--accent);padding-left:9px}
+.mi-icon{font-size:16px;width:22px;text-align:center;flex:0 0 auto}
+.mi-count{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted2);background:var(--surface);border:1px solid var(--line);padding:2px 7px;border-radius:999px}
+
+/* ===== Discord Modal ===== */
+.discord-overlay{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.discord-overlay.open{display:flex}
+.discord-modal{width:100%;max-width:400px;background:#1e2030;border:1px solid var(--line2);border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.discord-header{display:flex;align-items:center;gap:12px;padding:16px 18px;background:#16182a;border-bottom:1px solid var(--line)}
+.discord-header span{flex:1;font-weight:800;font-size:16px;color:#fff}
+.discord-close{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.1);color:#aaa;font-size:14px;display:grid;place-items:center;transition:background .14s}
+.discord-close:hover{background:rgba(255,255,255,.2)}
+.discord-body{padding:18px}
+.discord-user{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:12px;background:#2a2d40;border-radius:10px;border:1px solid var(--line)}
+.discord-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#5865F2,#7289da);display:grid;place-items:center;font-weight:900;font-size:14px;color:#fff;flex:0 0 auto}
+.discord-name{font-weight:800;font-size:14px;margin-bottom:2px}
+.discord-tag{font-size:12px;color:#5865F2;font-weight:600}
+.discord-msg-label{font-size:11px;font-weight:700;letter-spacing:.8px;color:var(--muted2);margin-bottom:8px}
+.discord-msg-preview{background:#161820;border:1px solid var(--line2);border-radius:10px;padding:14px;font-size:13.5px;color:#c8d0e0;line-height:1.6;white-space:pre-line;margin-bottom:16px;font-style:italic}
+.discord-actions{display:flex;gap:10px}
+.discord-copy-btn{flex:1;padding:11px;border-radius:10px;background:var(--surface);border:1px solid var(--line2);color:var(--txt);font-size:13px;font-weight:700;transition:background .14s}
+.discord-copy-btn:hover{background:var(--surface2)}
+.discord-open-btn{flex:1;padding:11px;border-radius:10px;background:#5865F2;color:#fff;font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:filter .14s}
+.discord-open-btn:hover{filter:brightness(1.1)}
+
+/* ===== Search Dropdown ===== */
+.search-dropdown{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--bg2);border-bottom:1px solid var(--line2);max-height:60vh;overflow-y:auto;display:none;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.search-dropdown.open{display:block}
+.sd-inner{max-width:var(--maxw);margin:0 auto;padding:10px 14px 14px}
+.sd-label{font-size:10px;font-weight:700;letter-spacing:1.2px;color:var(--muted2);padding:8px 4px 6px}
+.sd-item{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:10px;cursor:pointer;transition:background .12s}
+.sd-item:hover{background:var(--surface2)}
+.sd-img{width:54px;height:25px;border-radius:5px;overflow:hidden;flex:0 0 auto;background:#0c0f14;position:relative}
+.sd-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.sd-img .ph{position:absolute;inset:0;width:100%;height:100%}
+.sd-img .ph .ph-name,.sd-img .ph .ph-tag{display:none}
+.sd-img .ph .mono{font-size:10px}
+.sd-name{font-size:14px;font-weight:600;flex:1;color:var(--txt)}
+.sd-badge{font-size:10px;font-weight:700;padding:3px 7px;border-radius:5px;background:rgba(255,179,58,.12);border:1px solid rgba(255,179,58,.3);color:#ffe0ad}
+.sd-empty{padding:20px;text-align:center;color:var(--muted);font-size:14px}
+
+/* ===== PATCH PERFORMANCE 120HZ / VISUAL ATACADO KEYS ===== */
+html{scroll-behavior:auto!important}
+body::before{display:none!important}
+*{animation:none!important}
+.reveal,.reveal.in-view,.card.reveal,.feat-card.reveal{
+  opacity:1!important;transform:none!important;filter:none!important;transition:none!important;pointer-events:auto!important
+}
+.card,.feat-card{transition:none!important;will-change:auto!important;content-visibility:auto;contain-intrinsic-size:260px 190px}
+.card:hover,.feat-card:hover,.card:active,.feat-card:active{transform:none!important}
+.grid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
+.card{border-radius:8px;background:#050505}
+.card-media{aspect-ratio:2/3;background:#070707}
+.card-media img{object-fit:cover}
+.card-body{padding:8px 9px 9px;gap:4px;background:#050505}
+.card-title{font-size:11.5px;line-height:1.25;min-height:30px;-webkit-line-clamp:2}
+.price-line{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-top:3px}
+.price-copy{display:flex;flex-direction:column;line-height:1.05}
+.price-now{font-size:13px;font-weight:800;color:#fff}
+.price-pix{font-size:10px;color:#a8a8a8;margin-top:3px}
+.pix-badge{width:24px;height:24px;border-radius:6px;background:#053f3b;border:1px solid rgba(34,199,255,.25);display:grid;place-items:center;flex:0 0 auto}
+.pix-badge svg{width:18px;height:18px}
+.btn{padding:7px 8px;border-radius:5px;font-size:10.8px;margin-top:7px}
+.btn svg{width:13px;height:13px}
+.feat-card{flex:0 0 150px;border-radius:8px;background:#050505}
+.feat-img{aspect-ratio:2/3}
+.feat-img img{object-fit:cover}
+.feat-body{padding:8px 9px 9px;background:#050505}
+.feat-name{font-size:11.5px;margin-bottom:5px;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.feat-btn{padding:7px 8px;border-radius:5px;font-size:10.8px}
+.featured-head,.cat-head h2{color:#fff;text-transform:none;font-size:22px;letter-spacing:0}
+.featured-head::before,.cat-head h2::before{content:'';display:inline-block;width:7px;height:30px;background:#fff;border-radius:999px;margin-right:9px;vertical-align:middle}
+.quick-nav{display:flex;gap:8px;overflow-x:auto;padding-top:9px;scrollbar-width:none}
+.quick-nav::-webkit-scrollbar{display:none}
+.quick-pill{white-space:nowrap;font-size:12px;font-weight:800;color:#111;background:#fff;border-radius:8px;padding:8px 12px}
+.cat-head h2{cursor:pointer}
+.load-more-wrap{grid-column:1/-1;display:flex;justify-content:center;padding:12px 0 4px}
+.load-more{background:#fff;color:#000;border-radius:8px;padding:12px 18px;font-size:13px;font-weight:900}
+.product-view{padding:0}
+.product-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.product-cover{width:116px;aspect-ratio:2/3;border-radius:10px;overflow:hidden;background:#080808;flex:0 0 auto}
+.product-cover img{width:100%;height:100%;object-fit:cover}
+.product-info{flex:1;min-width:0}
+.product-info h2{font-size:20px;line-height:1.16;margin:0 0 9px;font-weight:900}
+.steam-chip{display:inline-flex;background:#5b5ff4;color:#fff;font-size:13px;font-weight:900;border-radius:7px;padding:7px 11px}
+.variant-list{display:flex;flex-direction:column;gap:9px;margin:14px 0}
+.variant{display:flex;align-items:center;gap:10px;border:1px solid var(--line2);background:#181818;border-radius:11px;padding:12px;cursor:pointer}
+.variant.selected{border-color:#2f6bff;background:#1b2942;box-shadow:inset 0 0 0 1px #2f6bff}
+.var-radio{width:18px;height:18px;border:2px solid #bbb;border-radius:50%;display:grid;place-items:center;flex:0 0 auto}
+.variant.selected .var-radio{border-color:#2f6bff}.variant.selected .var-radio::after{content:'';width:9px;height:9px;border-radius:50%;background:#2f6bff}
+.var-text{flex:1;font-size:15px;font-weight:900;line-height:1.2}
+.var-sub{font-size:12px;color:#aaa;font-weight:600;margin-top:3px}.var-price{font-size:16px;color:#39e078;font-weight:900}
+.stock-line{display:flex;gap:12px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 0;margin:6px 0 14px;color:#c7c7c7}
+.product-price{font-size:36px;font-weight:900;letter-spacing:-1px;margin-bottom:8px}.product-old{font-size:16px;color:#888;text-decoration:line-through}
+.product-actions{display:flex;flex-direction:column;gap:10px;margin:13px 0 18px}
+.buy-main,.cart-main{width:100%;border-radius:10px;padding:13px;font-size:15px;font-weight:900}
+.buy-main{background:#fff;color:#000}.cart-main{border:1px solid var(--line2);background:#171717;color:#fff}
+.product-desc{border:1px solid var(--line);border-radius:13px;padding:16px;background:#181818;margin-top:12px}
+.product-desc h3{font-size:18px;margin-bottom:12px}
+.product-desc li{list-style:none;font-size:15px;line-height:1.45;color:#cfcfcf;margin:9px 0}
+.product-desc b{color:#fff}
+.modal-top{background:#0b55ff!important;justify-content:space-between}
+.mt-cover,.mt-info{display:none!important}
+.modal{max-width:640px}
+@media(max-width:420px){
+  .grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .card-title{font-size:10.5px;min-height:28px}.price-now{font-size:12px}.price-pix{font-size:9px}.btn{font-size:10px;padding:7px 5px}
+  .pix-badge{width:22px;height:22px}.product-cover{width:104px}.product-info h2{font-size:18px}.product-price{font-size:32px}
+}
+
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brandbar">
+    <div class="brandbar-in">
+      <button class="icn" onclick="openMenu()" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="brand">MARTINS&nbsp;KEYS</div>
+      <button class="icn" onclick="openDiscord()" aria-label="Suporte Discord">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.2"/><rect x="17" y="13" width="4" height="6" rx="1.2"/><path d="M20 19a3 3 0 0 1-3 3h-3"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="searchrow">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="searchInput" type="search" inputmode="search" autocomplete="off" placeholder="O que você procura?">
+    </div>
+    <div class="quick-nav">
+      <button class="quick-pill" onclick="showAllGames()">Todos os Jogos</button>
+      <button class="quick-pill" onclick="setCat('action')">Ação / RPG</button>
+      <button class="quick-pill" onclick="setCat('racing')">Corrida</button>
+      <button class="quick-pill" onclick="setCat('anime')">Anime</button>
+      <button class="quick-pill" onclick="setCat('horror')">Terror</button>
+      <button class="quick-pill" onclick="setCat('sports')">Esportes</button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+  <section class="banner reveal">
+    <div class="banner-in">
+      <h1>Catálogo de <span class="cy">Steam Keys</span> originais</h1>
+      <p>Site de demonstração. Toque em qualquer jogo para ver, passo a passo, como funciona a entrega da key e a ativação — tudo 100% pela Steam, sem executáveis, sem instaladores externos.</p>
+      <div class="badges">
+        <span class="badge g">✓ 100% Original</span>
+        <span class="badge">⬡ Ativação pela Steam</span>
+        <span class="badge g">✓ Sem executáveis</span>
+        <span class="badge">⚡ Entrega imediata</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DESTAQUES ===== -->
+  <section class="featured-wrap reveal" id="featuredSection">
+    <div class="featured-head">🔥 Lançamentos</div>
+    <div class="featured-scroll" id="featLaunch"></div>
+    <div class="featured-head" style="margin-top:18px">⭐ Mais Jogados</div>
+    <div class="featured-scroll" id="featTop"></div>
+  </section>
+
+  <section class="cat-banner reveal">
+    <div class="cat-banner-img">
+      <div class="cat-banner-overlay">
+        <span class="keys-steam-text">KEYS<br><span class="ks">STEAM</span></span>
+        <span class="entrega-tag">ENTREGA AUTOMÁTICA</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cat-inner-search-wrap reveal">
+    <div class="cat-inner-search" onclick="document.getElementById('searchInput').focus()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <span>Buscar em Steam Keys…</span>
+    </div>
+  </section>
+
+  <section class="catalog reveal">
+    <div class="cat-head">
+      <button class="cat-back">‹</button>
+      <h2 id="allGamesTitle" onclick="showAllGames()">Todos os Jogos</h2>
+      <span class="count" id="count"></span>
+    </div>
+    <div id="grid" class="grid"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <span class="fbrand">MARTINS KEYS</span>
+    Catálogo de demonstração para fins ilustrativos. As keys, códigos e telas exibidas são <b>exemplos fictícios</b> e não representam uma loja ou venda real. <b>Steam</b> é marca registrada da Valve Corporation; este site não é afiliado à Valve. As capas dos jogos pertencem aos seus respectivos detentores de direitos.
+    <br><br>© <span id="year"></span> Martins Keys — demonstração.
+  </div>
+</footer>
+
+<div id="overlay" class="overlay">
+  <div class="modal">
+    <div class="modal-top">
+      <div class="mt-cover" id="mCover"></div>
+      <div class="mt-info">
+        <h3 id="mTitle">—</h3>
+        <div class="mt-sub" id="mSub"></div>
+      </div>
+      <button class="x" onclick="closeModal()" aria-label="Fechar">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="mbadges" id="mBadges"></div>
+      <div class="steps" id="steps"></div>
+      <div class="progress"><i id="spBar"></i></div>
+      <div class="stage" id="stage"></div>
+      <div class="panel-txt" id="panelTxt"></div>
+      <div class="nav">
+        <button class="prev" id="prevBtn" onclick="step(-1)">‹ Anterior</button>
+        <button class="next" id="nextBtn" onclick="step(1)">Próximo ›</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<!-- Side Menu -->
+<div id="menuOverlay" class="menu-overlay" onclick="if(event.target===this)closeMenu()">
+  <div class="menu-panel" id="menuPanel">
+    <div class="menu-header">
+      <span class="menu-title">MARTINS KEYS</span>
+      <button class="menu-close" onclick="closeMenu()">✕</button>
+    </div>
+    <div class="menu-section">
+      <div class="menu-label">FILTRAR</div>
+      <button class="menu-item active" onclick="setFilter('all')"><span class="mi-icon">🎮</span> Todos os jogos <span class="mi-count" id="mc-all"></span></button>
+      <button class="menu-item" onclick="setFilter('launch')"><span class="mi-icon">🔥</span> Lançamentos <span class="mi-count" id="mc-launch"></span></button>
+      <button class="menu-item" onclick="setFilter('dlc')"><span class="mi-icon">★</span> Com DLC <span class="mi-count" id="mc-dlc"></span></button>
+      <button class="menu-item" onclick="setFilter('base')"><span class="mi-icon">📦</span> Versão Base <span class="mi-count" id="mc-base"></span></button>
+    </div>
+    <div class="menu-section">
+      <div class="menu-label">CATEGORIAS</div>
+      <button class="menu-item" onclick="setCat('action')"><span class="mi-icon">⚔️</span> Ação / RPG</button>
+      <button class="menu-item" onclick="setCat('horror')"><span class="mi-icon">👻</span> Terror / Horror</button>
+      <button class="menu-item" onclick="setCat('survival')"><span class="mi-icon">🏕️</span> Sobrevivência</button>
+      <button class="menu-item" onclick="setCat('racing')"><span class="mi-icon">🏎️</span> Corrida / Sim</button>
+      <button class="menu-item" onclick="setCat('fighting')"><span class="mi-icon">🥊</span> Luta</button>
+      <button class="menu-item" onclick="setCat('anime')"><span class="mi-icon">🌸</span> Anime</button>
+      <button class="menu-item" onclick="setCat('indie')"><span class="mi-icon">💎</span> Indie</button>
+    </div>
+    <div class="menu-section">
+      <div class="menu-label">SUPORTE</div>
+      <button class="menu-item" onclick="closeMenu();openDiscord()"><span class="mi-icon">💬</span> Falar no Discord</button>
+    </div>
+  </div>
+</div>
+
+<!-- Discord Modal -->
+<div id="discordOverlay" class="discord-overlay" onclick="if(event.target===this)closeDiscord()">
+  <div class="discord-modal">
+    <div class="discord-header">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#5865F2"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+      <span>Suporte via Discord</span>
+      <button class="discord-close" onclick="closeDiscord()">✕</button>
+    </div>
+    <div class="discord-body">
+      <div class="discord-user">
+        <div class="discord-avatar">MK</div>
+        <div>
+          <div class="discord-name">Martins Keys</div>
+          <div class="discord-tag">@xyza4y</div>
+        </div>
+      </div>
+      <div class="discord-msg-label">Mensagem que será enviada:</div>
+      <div class="discord-msg-preview" id="discordMsgPreview"></div>
+      <div class="discord-actions">
+        <button class="discord-copy-btn" onclick="copyDiscordMsg()">📋 Copiar mensagem</button>
+        <a class="discord-open-btn" id="discordLink" href="https://discord.com/users/xyza4y" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          Abrir Discord
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Search Dropdown -->
+<div id="searchDropdown" class="search-dropdown"></div>
+
+<script>
+/* ===== Dados + lógica (reaproveitados e otimizados para performance) ===== */
+const GAMES=[
+{id:1,name:"007 First Light",dlc:false,launch:true},{id:2,name:"After Blast",dlc:false,launch:false},
+{id:3,name:"AI Shoujo",dlc:true,launch:false},{id:4,name:"ARK: Survival Ascended",dlc:true,launch:false},
+{id:5,name:"ARK: Survival Evolved",dlc:true,launch:false},{id:6,name:"Aseprite",dlc:false,launch:false},
+{id:7,name:"Assetto Corsa",dlc:true,launch:false},{id:8,name:"Assetto Corsa EVO",dlc:false,launch:false},
+{id:9,name:"Atomic Heart",dlc:true,launch:false},{id:10,name:"Attack on Titan 2",dlc:true,launch:false},
+{id:11,name:"Automation - Car Tycoon",dlc:true,launch:false},{id:12,name:"Baldur's Gate 3",dlc:false,launch:false},
+{id:13,name:"Batman: Arkham Knight",dlc:true,launch:false},{id:14,name:"BeamNG.drive",dlc:true,launch:false},
+{id:15,name:"Blasphemous",dlc:true,launch:false},{id:16,name:"Blasphemous 2",dlc:true,launch:false},
+{id:17,name:"Borderlands 3",dlc:true,launch:false},{id:18,name:"Call of Duty 4: Modern Warfare",dlc:true,launch:false},
+{id:19,name:"Call of Duty: Black Ops II",dlc:true,launch:false},{id:20,name:"Call of Duty: Ghosts",dlc:true,launch:false},
+{id:21,name:"Call of Duty: Modern Warfare",dlc:true,launch:false},{id:22,name:"Call of Duty: MW3",dlc:true,launch:false},
+{id:23,name:"The Callisto Protocol",dlc:true,launch:false},{id:24,name:"Car Dealer Simulator",dlc:true,launch:false},
+{id:25,name:"The Casting of Frank Stone",dlc:false,launch:false},{id:26,name:"Cities: Skylines II",dlc:true,launch:false},
+{id:27,name:"Clair Obscur: Expedition 33",dlc:false,launch:false},{id:28,name:"Control Ultimate Edition",dlc:true,launch:false},
+{id:29,name:"Crash Bandicoot 4",dlc:false,launch:false},{id:30,name:"Crash Bandicoot N. Sane Trilogy",dlc:false,launch:false},
+{id:31,name:"Crimson Desert",dlc:false,launch:true},{id:32,name:"Crisis Core – FF VII Reunion",dlc:false,launch:false},
+{id:33,name:"Cronos: The New Dawn",dlc:false,launch:false},{id:34,name:"Cuphead",dlc:true,launch:false},
+{id:35,name:"Cyberpunk 2077",dlc:true,launch:false},{id:36,name:"Dark Souls II: Scholar",dlc:true,launch:false},
+{id:37,name:"Dark Souls III",dlc:true,launch:false},{id:38,name:"Dark Souls Remastered",dlc:true,launch:false},
+{id:39,name:"Days Gone",dlc:false,launch:false},{id:40,name:"Dead Cells",dlc:true,launch:false},
+{id:41,name:"Death Stranding 2",dlc:false,launch:true},{id:42,name:"Death Stranding Director's Cut",dlc:true,launch:false},
+{id:43,name:"Demon Slayer 2",dlc:true,launch:false},{id:44,name:"Detroit: Become Human",dlc:false,launch:false},
+{id:45,name:"Devil May Cry 5",dlc:true,launch:false},{id:46,name:"DEVOUR",dlc:false,launch:false},
+{id:47,name:"Disco Elysium – Final Cut",dlc:false,launch:false},{id:48,name:"Dispatch",dlc:false,launch:false},
+{id:49,name:"Don't Starve",dlc:true,launch:false},{id:50,name:"Don't Starve Together",dlc:true,launch:false},
+{id:51,name:"DOOM Eternal",dlc:true,launch:false},{id:52,name:"DOOM: The Dark Ages",dlc:true,launch:false},
+{id:53,name:"Dragon Ball Z: Kakarot",dlc:true,launch:false},{id:54,name:"Dragon Ball: Sparking! ZERO",dlc:true,launch:false},
+{id:55,name:"Drive Beyond Horizons",dlc:false,launch:false},{id:56,name:"Dying Light",dlc:true,launch:false},
+{id:57,name:"Dying Light 2: Reloaded",dlc:true,launch:false},{id:58,name:"Dying Light: The Beast",dlc:false,launch:true},
+{id:59,name:"Dynasty Warriors: Origins",dlc:false,launch:false},{id:60,name:"Elden Ring",dlc:true,launch:false},
+{id:61,name:"Elden Ring Nightreign",dlc:false,launch:false},{id:62,name:"Elder Scrolls IV: Oblivion Remastered",dlc:true,launch:false},
+{id:63,name:"Skyrim Special Edition",dlc:true,launch:false},{id:64,name:"Enshrouded",dlc:false,launch:false},
+{id:65,name:"Euro Truck Simulator 2",dlc:true,launch:false},{id:66,name:"Evil West",dlc:true,launch:false},
+{id:67,name:"Fallout 4",dlc:true,launch:false},{id:68,name:"Fallout 76",dlc:true,launch:false},
+{id:69,name:"Farming Simulator 22",dlc:true,launch:false},{id:70,name:"Farming Simulator 25",dlc:true,launch:false},
+{id:71,name:"Fatal Fury: City of the Wolves",dlc:true,launch:false},{id:72,name:"Final Fantasy VII Rebirth",dlc:false,launch:false},
+{id:73,name:"Final Fantasy VII Remake",dlc:true,launch:false},{id:74,name:"Final Fantasy XVI",dlc:true,launch:false},
+{id:75,name:"The First Berserker: Khazan",dlc:false,launch:false},{id:76,name:"Five Nights at Freddy's: Secret of the Mimic",dlc:false,launch:false},
+{id:77,name:"The Forest",dlc:false,launch:false},{id:78,name:"Forza Horizon 4",dlc:true,launch:false},
+{id:79,name:"Forza Horizon 5",dlc:true,launch:false},{id:80,name:"Forza Horizon 6",dlc:false,launch:true},
+{id:81,name:"Ghost of Tsushima",dlc:true,launch:false},{id:82,name:"Ghostwire: Tokyo",dlc:true,launch:false},
+{id:83,name:"God of War",dlc:false,launch:false},{id:84,name:"God of War Ragnarök",dlc:true,launch:false},
+{id:85,name:"Gotham Knights",dlc:true,launch:false},{id:86,name:"Granblue Fantasy: Relink",dlc:true,launch:false},
+{id:87,name:"Green Hell",dlc:true,launch:false},{id:88,name:"Ground Branch",dlc:false,launch:false},
+{id:89,name:"Grounded 2",dlc:false,launch:false},{id:90,name:"Guilty Gear -STRIVE-",dlc:true,launch:false},
+{id:91,name:"Gundam Breaker 4",dlc:true,launch:false},{id:92,name:"Hades II",dlc:false,launch:false},
+{id:93,name:"Hell is Us",dlc:false,launch:false},{id:94,name:"HITMAN World of Assassination",dlc:true,launch:false},
+{id:95,name:"Hogwarts Legacy",dlc:true,launch:false},{id:96,name:"Hollow Knight: Silksong",dlc:false,launch:true},
+{id:97,name:"Horizon Forbidden West",dlc:true,launch:false},{id:98,name:"Horizon Zero Dawn Complete",dlc:true,launch:false},
+{id:99,name:"Horizon Zero Dawn Remastered",dlc:true,launch:false},{id:100,name:"ICARUS",dlc:true,launch:false},
+{id:101,name:"Inazuma Eleven: Victory Road",dlc:false,launch:false},{id:102,name:"Indiana Jones and the Great Circle",dlc:true,launch:false},
+{id:103,name:"INSIDE",dlc:false,launch:false},{id:104,name:"Invincible VS",dlc:false,launch:false},
+{id:105,name:"inZOI",dlc:false,launch:false},{id:106,name:"It Takes Two",dlc:true,launch:false},
+{id:107,name:"JDM: Japanese Drift Master",dlc:true,launch:false},{id:108,name:"Jurassic World Evolution 3",dlc:false,launch:false},
+{id:109,name:"Killing Floor 3",dlc:true,launch:false},{id:110,name:"Kingdom Come: Deliverance",dlc:true,launch:false},
+{id:111,name:"Kingdom Come: Deliverance II",dlc:true,launch:false},{id:112,name:"Kingdom Hearts 1.5+2.5",dlc:false,launch:false},
+{id:113,name:"Kingdom Hearts 2.8",dlc:false,launch:false},{id:114,name:"Kingdom Hearts III + Re Mind",dlc:true,launch:false},
+{id:115,name:"The Last of Us Part I",dlc:false,launch:false},{id:116,name:"The Last of Us Part II",dlc:false,launch:false},
+{id:117,name:"Layers of Fear",dlc:false,launch:false},{id:118,name:"Left 4 Dead 2",dlc:true,launch:false},
+{id:119,name:"LEGO Batman: Legacy of the Dark Knight",dlc:false,launch:false},{id:120,name:"LEGO Star Wars: Skywalker Saga",dlc:true,launch:false},
+{id:121,name:"Lies of P",dlc:true,launch:false},{id:122,name:"LIMBO",dlc:false,launch:false},
+{id:123,name:"Little Nightmares",dlc:true,launch:false},{id:124,name:"Little Nightmares II",dlc:true,launch:false},
+{id:125,name:"Little Nightmares III",dlc:false,launch:false},{id:126,name:"Lossless Scaling",dlc:false,launch:false},
+{id:127,name:"Lost Soul Aside",dlc:false,launch:false},{id:128,name:"Mafia: The Old Country",dlc:false,launch:false},
+{id:129,name:"Manor Lords",dlc:false,launch:false},{id:130,name:"Marvel's Spider-Man 2",dlc:false,launch:false},
+{id:131,name:"Marvel's Spider-Man Remastered",dlc:true,launch:false},{id:132,name:"Spider-Man: Miles Morales",dlc:false,launch:false},
+{id:133,name:"Metal Gear Rising: Revengeance",dlc:true,launch:false},{id:134,name:"Metal Gear Solid Δ: Snake Eater",dlc:false,launch:false},
+{id:135,name:"Metal Gear Solid V",dlc:true,launch:false},{id:136,name:"Metro Exodus",dlc:true,launch:false},
+{id:137,name:"Middle-earth: Shadow of Mordor",dlc:true,launch:false},{id:138,name:"Middle-earth: Shadow of War",dlc:true,launch:false},
+{id:139,name:"MiSide",dlc:false,launch:false},{id:140,name:"Monster Hunter Wilds",dlc:true,launch:false},
+{id:141,name:"Mortal Kombat 1",dlc:true,launch:false},{id:142,name:"Mortal Kombat 11",dlc:true,launch:false},
+{id:143,name:"Mortal Kombat X",dlc:true,launch:false},{id:144,name:"MK: Legacy Kollection",dlc:false,launch:false},
+{id:145,name:"Mouthwashing",dlc:false,launch:false},{id:146,name:"My Summer Car",dlc:false,launch:false},
+{id:147,name:"Naruto Storm 3",dlc:true,launch:false},{id:148,name:"Naruto Storm 4",dlc:true,launch:false},
+{id:149,name:"Naruto to Boruto: Shinobi Striker",dlc:true,launch:false},{id:150,name:"Naruto x Boruto Storm Connections",dlc:true,launch:false},
+{id:151,name:"NieR: Automata",dlc:true,launch:false},{id:152,name:"Ninja Gaiden 4",dlc:false,launch:false},
+{id:153,name:"Nioh 2",dlc:true,launch:false},{id:154,name:"Nioh 3",dlc:false,launch:false},
+{id:155,name:"No Man's Sky",dlc:false,launch:false},{id:156,name:"One Piece Odyssey",dlc:true,launch:false},
+{id:157,name:"One Piece: Pirate Warriors 4",dlc:true,launch:false},{id:158,name:"OneShot",dlc:false,launch:false},
+{id:159,name:"Outer Wilds",dlc:true,launch:false},{id:160,name:"The Outer Worlds",dlc:true,launch:false},
+{id:161,name:"The Outer Worlds 2",dlc:false,launch:true},{id:162,name:"Outlast 2",dlc:false,launch:false},
+{id:163,name:"Overcooked 2",dlc:true,launch:false},{id:164,name:"Palworld",dlc:false,launch:false},
+{id:165,name:"Phasmophobia",dlc:false,launch:false},{id:166,name:"Poppy Playtime (todos capítulos)",dlc:true,launch:false},
+{id:167,name:"Pragmata",dlc:false,launch:false},{id:168,name:"Prehistoric Kingdom",dlc:true,launch:false},
+{id:169,name:"Project Zomboid",dlc:false,launch:false},{id:170,name:"Raft",dlc:false,launch:false},
+{id:171,name:"Ratchet & Clank: Rift Apart",dlc:false,launch:false},{id:172,name:"Ready or Not",dlc:true,launch:false},
+{id:173,name:"REANIMAL",dlc:false,launch:false},{id:174,name:"Red Dead Redemption",dlc:true,launch:false},
+{id:175,name:"Remnant II",dlc:true,launch:false},{id:176,name:"Resident Evil 0",dlc:false,launch:false},
+{id:177,name:"Resident Evil 2",dlc:true,launch:false},{id:178,name:"Resident Evil 3",dlc:true,launch:false},
+{id:179,name:"Resident Evil 4 (2005)",dlc:true,launch:false},{id:180,name:"Resident Evil 4 Remake",dlc:true,launch:false},
+{id:181,name:"Resident Evil 5",dlc:true,launch:false},{id:182,name:"Resident Evil 6",dlc:true,launch:false},
+{id:183,name:"Resident Evil 7 Biohazard",dlc:true,launch:false},{id:184,name:"Resident Evil Requiem",dlc:false,launch:true},
+{id:185,name:"Resident Evil Village",dlc:true,launch:false},{id:186,name:"Returnal",dlc:false,launch:false},
+{id:187,name:"Ride 5",dlc:true,launch:false},{id:188,name:"Rise of the Ronin",dlc:false,launch:false},
+{id:189,name:"Rise of the Tomb Raider",dlc:true,launch:false},{id:190,name:"S.T.A.L.K.E.R. 2",dlc:true,launch:false},
+{id:191,name:"Sackboy: Uma Grande Aventura",dlc:false,launch:false},{id:192,name:"Sekiro: Shadows Die Twice",dlc:true,launch:false},
+{id:193,name:"Session: Skate Sim",dlc:true,launch:false},{id:194,name:"Shadow of the Tomb Raider",dlc:true,launch:false},
+{id:195,name:"Sifu",dlc:true,launch:false},{id:196,name:"Silent Hill 2",dlc:false,launch:false},
+{id:197,name:"Silent Hill f",dlc:false,launch:true},{id:198,name:"SnowRunner",dlc:true,launch:false},
+{id:199,name:"Sonic Racing: CrossWorlds",dlc:false,launch:false},{id:200,name:"Sons Of The Forest",dlc:false,launch:false},
+{id:201,name:"Soulmask",dlc:true,launch:false},{id:202,name:"Split Fiction",dlc:false,launch:false},
+{id:203,name:"Spyro Reignited Trilogy",dlc:false,launch:false},{id:204,name:"Stardew Valley",dlc:false,launch:false},
+{id:205,name:"Starfield",dlc:true,launch:false},{id:206,name:"Stellar Blade",dlc:true,launch:false},
+{id:207,name:"Stray",dlc:false,launch:false},{id:208,name:"Street Fighter 6",dlc:true,launch:false},
+{id:209,name:"Street Fighter V",dlc:true,launch:false},{id:210,name:"Subnautica",dlc:false,launch:false},
+{id:211,name:"Subnautica 2",dlc:false,launch:true},{id:212,name:"Succubus",dlc:true,launch:false},
+{id:213,name:"Tekken 8",dlc:true,launch:false},{id:214,name:"Terraria",dlc:false,launch:false},
+{id:215,name:"theHunter: Call of the Wild",dlc:true,launch:false},{id:216,name:"ULTRAKILL",dlc:false,launch:false},
+{id:217,name:"Uncharted: Legacy of Thieves",dlc:false,launch:false},{id:218,name:"Until Dawn",dlc:false,launch:false},
+{id:219,name:"V Rising",dlc:true,launch:false},{id:220,name:"The Witcher 3: Wild Hunt",dlc:true,launch:false},
+{id:221,name:"Wo Long: Fallen Dynasty",dlc:true,launch:false},{id:222,name:"World War Z",dlc:true,launch:false},
+{id:223,name:"Wreckfest 2",dlc:false,launch:false},{id:224,name:"WWE 2K25",dlc:true,launch:false},
+{id:225,name:"Yakuza 0",dlc:true,launch:false},
+];
+// Mapa direto: game.id → Steam AppID (100% correto, sem slugify)
+const STEAM={
+1:3768760,   // 007 First Light
+2:1644870,   // After Blast
+3:1250650,   // AI Shoujo
+4:2399830,   // ARK: Survival Ascended
+5:346110,    // ARK: Survival Evolved
+6:431730,    // Aseprite
+7:244210,    // Assetto Corsa
+8:3058630,   // Assetto Corsa EVO
+9:668580,    // Atomic Heart
+10:601050,   // Attack on Titan 2
+11:293760,   // Automation - Car Tycoon
+12:1086940,  // Baldur's Gate 3
+13:208650,   // Batman: Arkham Knight
+14:284160,   // BeamNG.drive
+15:774361,   // Blasphemous
+16:2114740,  // Blasphemous 2
+17:397540,   // Borderlands 3
+18:7940,     // Call of Duty 4: Modern Warfare
+19:202970,   // Call of Duty: Black Ops II
+20:209160,   // Call of Duty: Ghosts
+21:1985810,  // Call of Duty: Modern Warfare (2019)
+22:2519060,  // Call of Duty: MW3
+23:1544020,  // The Callisto Protocol
+24:2404880,  // Car Dealer Simulator
+25:2088710,  // The Casting of Frank Stone
+26:949230,   // Cities: Skylines II
+27:1903340,  // Clair Obscur: Expedition 33
+28:870780,   // Control Ultimate Edition
+29:1378620,  // Crash Bandicoot 4
+30:731490,   // Crash Bandicoot N. Sane Trilogy
+31:3321460,  // Crimson Desert
+32:1608070,  // Crisis Core – FF VII Reunion
+33:2101960,  // Cronos: The New Dawn
+34:268910,   // Cuphead
+35:1091500,  // Cyberpunk 2077
+36:335300,   // Dark Souls II: Scholar
+37:374320,   // Dark Souls III
+38:570940,   // Dark Souls Remastered
+39:1259420,  // Days Gone
+40:588650,   // Dead Cells
+41:3280350,  // Death Stranding 2: On the Beach
+42:1850570,  // Death Stranding Director's Cut
+43:2928600,  // Demon Slayer 2 (Hinokami Chronicles 2)
+44:1222140,  // Detroit: Become Human
+45:601150,   // Devil May Cry 5
+46:1274570,  // DEVOUR
+47:632470,   // Disco Elysium – Final Cut
+48:2592160,  // Dispatch
+49:219740,   // Don't Starve
+50:322330,   // Don't Starve Together
+51:782330,   // DOOM Eternal
+52:2413590,  // DOOM: The Dark Ages
+53:851850,   // Dragon Ball Z: Kakarot
+54:1790600,  // Dragon Ball: Sparking! ZERO
+55:2625420,  // Drive Beyond Horizons
+56:239140,   // Dying Light
+57:534380,   // Dying Light 2: Reloaded
+58:2789640,  // Dying Light: The Beast
+59:2765540,  // Dynasty Warriors: Origins
+60:1245620,  // Elden Ring
+61:2622380,  // Elden Ring Nightreign
+62:2623190,  // Elder Scrolls IV: Oblivion Remastered
+63:489830,   // Skyrim Special Edition
+64:1203620,  // Enshrouded
+65:227300,   // Euro Truck Simulator 2
+66:1065310,  // Evil West
+67:377160,   // Fallout 4
+68:1151340,  // Fallout 76
+69:1248130,  // Farming Simulator 22
+70:2300320,  // Farming Simulator 25
+71:1851090,  // Fatal Fury: City of the Wolves
+72:2909400,  // Final Fantasy VII Rebirth
+73:1462040,  // Final Fantasy VII Remake
+74:2515020,  // Final Fantasy XVI
+75:2898110,  // The First Berserker: Khazan
+76:2215390,  // Five Nights at Freddy's: Secret of the Mimic
+77:242760,   // The Forest
+78:1293830,  // Forza Horizon 4
+79:1551360,  // Forza Horizon 5
+80:2483190,  // Forza Horizon 6
+81:2215430,  // Ghost of Tsushima
+82:1475810,  // Ghostwire: Tokyo
+83:1593500,  // God of War
+84:2322010,  // God of War Ragnarök
+85:1496790,  // Gotham Knights
+86:881020,   // Granblue Fantasy: Relink
+87:815370,   // Green Hell
+88:16900,    // Ground Branch
+89:2661300,  // Grounded 2
+90:1384160,  // Guilty Gear -STRIVE-
+91:1672500,  // Gundam Breaker 4
+92:1145360,  // Hades II
+93:1620730,  // Hell is Us
+94:1659040,  // HITMAN World of Assassination
+95:990080,   // Hogwarts Legacy
+96:1030300,  // Hollow Knight: Silksong
+97:2420110,  // Horizon Forbidden West
+98:1151640,  // Horizon Zero Dawn Complete
+99:2561580,  // Horizon Zero Dawn Remastered
+100:1149460, // ICARUS
+101:2799860, // Inazuma Eleven: Victory Road
+102:2677660, // Indiana Jones and the Great Circle
+103:304430,  // INSIDE
+104:2456160, // Invincible VS
+105:2456740, // inZOI
+106:1426210, // It Takes Two
+107:1153410, // JDM: Japanese Drift Master
+108:2958130, // Jurassic World Evolution 3
+109:1430190, // Killing Floor 3
+110:379430,  // Kingdom Come: Deliverance
+111:1771300, // Kingdom Come: Deliverance II
+112:2552430, // Kingdom Hearts 1.5+2.5
+113:2552440, // Kingdom Hearts 2.8
+114:2552450, // Kingdom Hearts III + Re Mind
+115:1888930, // The Last of Us Part I
+116:2531310, // The Last of Us Part II
+117:1567270, // Layers of Fear
+118:550,     // Left 4 Dead 2
+119:2215200, // LEGO Batman: Legacy of the Dark Knight
+120:920210,  // LEGO Star Wars: Skywalker Saga
+121:1627720, // Lies of P
+122:48000,   // LIMBO
+123:424840,  // Little Nightmares
+124:860510,  // Little Nightmares II
+125:1392860, // Little Nightmares III
+126:993090,  // Lossless Scaling
+127:3378960, // Lost Soul Aside
+128:1941540, // Mafia: The Old Country
+129:1363080, // Manor Lords
+130:2651280, // Marvel's Spider-Man 2
+131:1817070, // Marvel's Spider-Man Remastered
+132:1817190, // Spider-Man: Miles Morales
+133:235460,  // Metal Gear Rising: Revengeance
+134:2417610, // Metal Gear Solid Δ: Snake Eater
+135:287700,  // Metal Gear Solid V
+136:412020,  // Metro Exodus
+137:241930,  // Middle-earth: Shadow of Mordor
+138:356190,  // Middle-earth: Shadow of War
+139:2527500, // MiSide
+140:2246340, // Monster Hunter Wilds
+141:1971870, // Mortal Kombat 1
+142:976310,  // Mortal Kombat 11
+143:307780,  // Mortal Kombat X
+144:2854370, // MK: Legacy Kollection
+145:2475490, // Mouthwashing
+146:516750,  // My Summer Car
+147:694560,  // Naruto Storm 3
+148:349040,  // Naruto Storm 4
+149:1106440, // Naruto to Boruto: Shinobi Striker
+150:1020790, // Naruto x Boruto Storm Connections
+151:524220,  // NieR: Automata
+152:2627260, // Ninja Gaiden 4
+153:1325200, // Nioh 2
+154:3681010, // Nioh 3
+155:275850,  // No Man's Sky
+156:1451000, // One Piece Odyssey
+157:1089090, // One Piece: Pirate Warriors 4
+158:420530,  // OneShot
+159:753640,  // Outer Wilds
+160:578650,  // The Outer Worlds
+161:1449110, // The Outer Worlds 2
+162:414700,  // Outlast 2
+163:728880,  // Overcooked 2
+164:1623730, // Palworld
+165:739630,  // Phasmophobia
+166:1721470, // Poppy Playtime (todos capítulos)
+167:3357650, // Pragmata
+168:666150,  // Prehistoric Kingdom
+169:108600,  // Project Zomboid
+170:648800,  // Raft
+171:1895880, // Ratchet & Clank: Rift Apart
+172:1144200, // Ready or Not
+173:2129530, // REANIMAL
+174:2668510, // Red Dead Redemption
+175:1282100, // Remnant II
+176:339340,  // Resident Evil 0
+177:883710,  // Resident Evil 2
+178:952060,  // Resident Evil 3
+179:254700,  // Resident Evil 4 (2005)
+180:2050650, // Resident Evil 4 Remake
+181:21690,   // Resident Evil 5
+182:221040,  // Resident Evil 6
+183:418370,  // Resident Evil 7 Biohazard
+184:3764200, // Resident Evil Requiem
+185:1196590, // Resident Evil Village
+186:1649240, // Returnal
+187:1714920, // Ride 5
+188:2835570, // Rise of the Ronin
+189:391220,  // Rise of the Tomb Raider
+190:1643320, // S.T.A.L.K.E.R. 2
+191:1599660, // Sackboy: Uma Grande Aventura
+192:814380,  // Sekiro: Shadows Die Twice
+193:1341160, // Session: Skate Sim
+194:750920,  // Shadow of the Tomb Raider
+195:2138710, // Sifu
+196:2124490, // Silent Hill 2
+197:2947440, // Silent Hill f
+198:1465360, // SnowRunner
+199:2486820, // Sonic Racing: CrossWorlds
+200:1326470, // Sons Of The Forest
+201:2767090, // Soulmask
+202:2001120, // Split Fiction
+203:996580,  // Spyro Reignited Trilogy
+204:413150,  // Stardew Valley
+205:1716740, // Starfield
+206:3489700, // Stellar Blade
+207:1332010, // Stray
+208:1364780, // Street Fighter 6
+209:310950,  // Street Fighter V
+210:264710,  // Subnautica
+211:1962700, // Subnautica 2
+212:1516780, // Succubus
+213:1778820, // Tekken 8
+214:105600,  // Terraria
+215:518790,  // theHunter: Call of the Wild
+216:1229490, // ULTRAKILL
+217:1659420, // Uncharted: Legacy of Thieves
+218:2172010, // Until Dawn
+219:1604030, // V Rising
+220:292030,  // The Witcher 3: Wild Hunt
+221:1448440, // Wo Long: Fallen Dynasty
+222:699130,  // World War Z
+223:1203190, // Wreckfest 2
+224:2371910, // WWE 2K25
+225:638970,  // Yakuza 0
+};
+
+
+const GRADS=[
+'linear-gradient(135deg,#0ea5e9,#7c3aed)','linear-gradient(135deg,#f43f5e,#7c3aed)',
+'linear-gradient(135deg,#06b6d4,#0e7490)','linear-gradient(135deg,#ec4899,#8b5cf6)',
+'linear-gradient(135deg,#22c55e,#0891b2)','linear-gradient(135deg,#f59e0b,#ef4444)',
+'linear-gradient(135deg,#3b82f6,#1e3a8a)','linear-gradient(135deg,#14b8a6,#4f46e5)',
+'linear-gradient(135deg,#a855f7,#ec4899)','linear-gradient(135deg,#06b6d4,#ec4899)'
+];
+
+// ── helpers ──
+function hash(s){let h=0;for(let i=0;i<s.length;i++)h=s.charCodeAt(i)+((h<<5)-h);return Math.abs(h);}
+function esc(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+function grad(g){return GRADS[hash(g.name)%GRADS.length];}
+function mono(g){return g.name.replace(/[^A-Za-z0-9]/g,'').slice(0,2).toUpperCase();}
+function phHTML(g){return `<div class="ph" style="--g:${grad(g)}"><span class="mono">${mono(g)}</span><span class="ph-name">${esc(g.name)}</span><span class="ph-tag">STEAM KEY · ${g.dlc?'COM DLC':'BASE'}</span></div>`;}
+
+// Imagens com vários fallbacks: se uma capa falhar, tenta a próxima automaticamente.
+// Isso evita card sem foto nas abas de Lançamentos, Mais Jogados, busca, catálogo e modal.
+const EXTRA_IMAGES={
+  // Capas oficiais da Steam com a pasta/hash correta. Sem isso, alguns jogos novos ficam sem foto.
+  70:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/header.jpg","https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2300320/header.jpg"], // Farming Simulator 25
+  1:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3768760/dbe86ebd2edb4c77d113e9e2feefeb90189fabc9/header.jpg"], // 007 First Light
+  80:["https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2483190/27abb1584a118d50d0e3950fd48d557c51981db7/header.jpg?t=1779912021"], // Forza Horizon 6
+  23:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1544020/header.jpg?t=1760331403"], // The Callisto Protocol
+  76:["https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2215390/527bbebaa5764de58528487b3f2142c44a58b267/header.jpg?t=1779297670"], // Five Nights at Freddy's: Secret of the Mimic
+  154:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3681010/a21264e9fd476dcb2901c2432b598107d024c5a8/header.jpg?t=1772090941"], // Nioh 3
+  41:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3280350/6270c77b0729e2df0a17d660286eeddfd9169386/header.jpg?t=1774022345"], // Death Stranding 2
+  62:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2623190/a7cee9165bb1bfc092c390c5cff215ce0e381dfc/header.jpg?t=1761681073"], // Oblivion Remastered
+  89:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2661300/c4fc47c7e6ece14e438f0957d066dc9ab2a3412a/header.jpg?t=1776193476"], // Grounded 2
+  108:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2958130/df39f8c59232633e8e01ab63313b095402bdd0d5/header.jpg?t=1770121149"], // Jurassic World Evolution 3
+  119:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215200/a07a9a6c0c9c1225f5b260b4f29fe40e6f099f6b/header.jpg?t=1779824566"], // LEGO Batman: Legacy of the Dark Knight
+  167:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3357650/e32e168b25ed68a0cf6264c220c07e96c2abfb56/header.jpg?t=1777351016"], // PRAGMATA
+  184:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/ce5437442768e38eb575f205ab9397d0264017b0/header.jpg?t=1779840172"], // Resident Evil Requiem
+  197:["https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2947440/7e5d923ac622bd1775ebc9b5d4b5b0a24bf5ed40/header.jpg?t=1770169624"], // SILENT HILL f
+};
+function coverList(g){
+  const manual=EXTRA_IMAGES[g.id]||[];
+  const id=STEAM[g.id];
+  const steam=id?[
+    // URLs oficiais da Steam Store. As duas primeiras são as mais atuais para jogos recentes.
+    `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`,
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`,
+    `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`,
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/capsule_616x353.jpg`,
+    `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${id}/capsule_616x353.jpg`,
+    `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`,
+    `https://cdn.akamai.steamstatic.com/steam/apps/${id}/header.jpg`,
+    `https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`,
+    `https://cdn.akamai.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`
+  ]:[];
+  return [...manual,...steam].filter(Boolean);
+}
+function imgHTML(g,opt={}){
+  const urls=coverList(g);
+  if(!urls.length)return '';
+  const srcs=urls.map(encodeURIComponent).join('|');
+  const loading=opt.loading||'lazy';
+  const cls=opt.className?` class="${esc(opt.className)}"`:'';
+  return `<img${cls} loading="${loading}" decoding="async" referrerpolicy="no-referrer" src="${esc(urls[0])}" data-srcs="${srcs}" data-img-idx="0" alt="${esc(g.name)}" onload="this.classList.add('loaded')" onerror="nextImg(this)">`;
+}
+function coverStackHTML(g,opt={}){return phHTML(g)+imgHTML(g,opt);}
+function nextImg(img){
+  const urls=(img.dataset.srcs||'').split('|').filter(Boolean).map(decodeURIComponent);
+  let idx=(parseInt(img.dataset.imgIdx||'0',10)||0)+1;
+  if(idx<urls.length){img.dataset.imgIdx=idx;img.classList.remove('loaded');img.src=urls[idx];}
+  else{img.remove();}
+}
+function exKey(seed){const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let r=seed*9301+49297;const rnd=()=>{r=(r*9301+49297)%233280;return r/233280;};let out=[];for(let gi=0;gi<3;gi++){let s='';for(let k=0;k<5;k++)s+=c[Math.floor(rnd()*c.length)];out.push(s);}return out.join('-');}
+const STEPS=[
+ {l:'Escolha',t:'Escolha o seu jogo',p:'Navegue pelo catálogo e selecione a edição desejada. Cada jogo mostra se é versão base ou com DLC.'},
+ {l:'Entrega',t:'Receba sua key original',p:'Assim que confirmado, você recebe na hora o seu código de ativação Steam — uma key 100% original e exclusiva.'},
+ {l:'Abra a Steam',t:'Abra a Steam',p:'No cliente da Steam, vá ao menu Jogos e clique em "Ativar um produto na Steam". O assistente oficial abre na sequência.'},
+ {l:'Insira',t:'Insira o código de ativação',p:'Cole sua key no campo do assistente e avance. Nada de executáveis, cracks ou instaladores de terceiros — só a Steam.'},
+ {l:'Jogue',t:'Pronto, é só jogar!',p:'O jogo é adicionado à sua biblioteca com acesso vitalício, vinculado à sua conta. Baixe pela Steam e divirta-se.'}
+];
+
+/* ===== Estado + render (catálogo limpo, ordem alfabética, sem preços) ===== */
+let cur=null,curKey='',sIdx=0,typeT=null,query='';
+GAMES.sort((a,b)=>a.name.localeCompare(b.name,'pt-BR',{sensitivity:'base'}));
+const grid=document.getElementById('grid');
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+function visible(){return query?GAMES.filter(g=>norm(g.name).includes(norm(query))):GAMES;}
+function render(){
+  const list=visible();
+  const isFiltered=query||activeFilter!=='all'||activeCat;
+  document.getElementById('featuredSection').style.display=isFiltered?'none':'';
+  document.getElementById('count').textContent=list.length+(list.length===1?' jogo':' jogos');
+  if(!list.length){grid.innerHTML='<div class="empty"><div class="big">🔍</div>Nenhum jogo encontrado.</div>';return;}
+  grid.innerHTML=list.map((g,idx)=>{
+    const coverHTML=coverStackHTML(g,{loading:idx<12?'eager':'lazy'});
+    return `<div class="card reveal" onclick="openModal(${g.id})">
+      ${g.launch?'<span class="ribbon">🔥 LANÇAMENTO</span>':''}
+      <div class="card-media">${coverHTML}</div>
+      <div class="card-body">
+        <div class="card-title">${g.name}</div>
+        <button class="btn" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg> Comprar agora</button>
+      </div>
+    </div>`;
+  }).join('');
+  initScrollReveal();
+}
+/* ===== Filter state ===== */
+let activeFilter='all', activeCat=null;
+
+const CAT_MAP={
+  action:['Elden Ring','God of War','Sekiro','Dark Souls','Control','NieR','Devil May Cry','Hitman','Ready or Not','Evil West','Sifu','Atomic Heart','Lies of P','Nioh','Remnant','Wo Long','Khazan','Cyberpunk','Hogwarts','Batman','Metal Gear','Ghostwire','Gotham Knights','Witcher','Indiana Jones','DOOM','ULTRAKILL','Hell is Us'],
+  horror:['Resident Evil','Silent Hill','Outlast','Layers of Fear','Phasmophobia','DEVOUR','Poppy Playtime','Mouthwashing','Callisto Protocol','Casting of Frank Stone','Five Nights','Little Nightmares','REANIMAL','Cronos'],
+  survival:['ARK','No Man','Palworld','Project Zomboid','Sons Of The Forest','Subnautica','Raft','Metro Exodus','Dying Light','Green Hell','V Rising','The Forest','Enshrouded','ICARUS','Don\'t Starve','Soulmask','Fallout','Ground Branch','inZOI'],
+  racing:['Assetto Corsa','Euro Truck','SnowRunner','Forza Horizon','My Summer Car','BeamNG','Farming Simulator','theHunter','Session','Car Dealer','Automation','JDM','Wreckfest','Ride 5'],
+  fighting:['Street Fighter','Tekken','Mortal Kombat','Guilty Gear','Fatal Fury','Gundam Breaker','WWE'],
+  anime:['Dragon Ball','Attack on Titan','Naruto','One Piece','Demon Slayer','Inazuma'],
+  indie:['Stardew Valley','Terraria','Dead Cells','Hades','Cuphead','Stray','Blasphemous','Little Nightmares','LIMBO','INSIDE','Outer Wilds','It Takes Two','Split Fiction','Disco Elysium','OneShot','ULTRAKILL'],
+};
+
+function matchesCat(g,cat){
+  if(!cat)return true;
+  const terms=CAT_MAP[cat]||[];
+  return terms.some(t=>g.name.toLowerCase().includes(t.toLowerCase()));
+}
+
+function visible(){
+  let list=GAMES;
+  if(query)list=list.filter(g=>norm(g.name).includes(norm(query)));
+  if(activeFilter==='launch')list=list.filter(g=>g.launch);
+  else if(activeFilter==='dlc')list=list.filter(g=>g.dlc);
+  else if(activeFilter==='base')list=list.filter(g=>!g.dlc);
+  if(activeCat)list=list.filter(g=>matchesCat(g,activeCat));
+  return list;
+}
+
+/* ===== Menu functions ===== */
+function openMenu(){
+  document.getElementById('menuOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('mc-all').textContent=GAMES.length;
+  document.getElementById('mc-launch').textContent=GAMES.filter(g=>g.launch).length;
+  document.getElementById('mc-dlc').textContent=GAMES.filter(g=>g.dlc).length;
+  document.getElementById('mc-base').textContent=GAMES.filter(g=>!g.dlc).length;
+}
+function closeMenu(){
+  document.getElementById('menuOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function setFilter(f){
+  activeFilter=f;activeCat=null;query='';
+  document.getElementById('searchInput').value='';
+  document.querySelectorAll('.menu-item').forEach(el=>el.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  render();closeMenu();
+  window.scrollTo({top:document.getElementById('grid').offsetTop-100,behavior:'smooth'});
+}
+function setCat(c){
+  activeCat=activeCat===c?null:c;
+  activeFilter='all';query='';
+  document.getElementById('searchInput').value='';
+  render();closeMenu();
+  window.scrollTo({top:document.getElementById('grid').offsetTop-100,behavior:'smooth'});
+}
+
+/* ===== Discord functions ===== */
+const DISCORD_MSG=`Olá! Vi o catálogo da Martins Keys e tenho interesse em comprar.
+
+Poderia me informar:
+• Qual o preço da key? (versão base)
+• Tem opção com DLC incluso? Se sim, qual o valor?
+
+Aguardo retorno! 🎮`;
+
+function openDiscord(){
+  document.getElementById('discordMsgPreview').textContent=DISCORD_MSG;
+  document.getElementById('discordOverlay').classList.add('open');
+}
+function closeDiscord(){document.getElementById('discordOverlay').classList.remove('open');}
+function copyDiscordMsg(){
+  navigator.clipboard&&navigator.clipboard.writeText(DISCORD_MSG);
+  toast('✅ Mensagem copiada! Abra o Discord e envie para @xyza4y');
+}
+
+/* ===== Search Dropdown ===== */
+const sdropdown=document.getElementById('searchDropdown');
+let dropdownTimeout=null;
+
+function renderDropdown(q){
+  if(!q||q.length<1){sdropdown.classList.remove('open');return;}
+  const matches=GAMES.filter(g=>norm(g.name).includes(norm(q))).slice(0,8);
+  if(!matches.length){
+    sdropdown.innerHTML=`<div class="sd-inner"><div class="sd-empty">Nenhum resultado para "<b>${q}</b>"</div></div>`;
+  } else {
+    const items=matches.map(g=>{
+      const coverHTML=coverStackHTML(g,{loading:'eager'});
+      const dlcBadge=g.dlc?'<span class="sd-badge">★ DLC</span>':'';
+      const launchBadge=g.launch?'<span class="sd-badge" style="background:rgba(255,80,80,.12);border-color:rgba(255,80,80,.3);color:#ffb0b0">🔥 LANÇAMENTO</span>':'';
+      return `<div class="sd-item" onclick="closeDropdown();openModal(${g.id})">
+        <div class="sd-img">${coverHTML}</div>
+        <span class="sd-name">${g.name}</span>
+        ${dlcBadge}${launchBadge}
+      </div>`;
+    }).join('');
+    sdropdown.innerHTML=`<div class="sd-inner"><div class="sd-label">RESULTADOS (${matches.length}${matches.length===8?'+':''})</div>${items}</div>`;
+  }
+  const topbar=document.querySelector('.topbar');
+  sdropdown.style.top=topbar.getBoundingClientRect().bottom+'px';
+  sdropdown.classList.add('open');
+}
+function closeDropdown(){sdropdown.classList.remove('open');}
+
+document.getElementById('searchInput').addEventListener('input',e=>{
+  query=e.target.value.trim();
+  render();
+  clearTimeout(dropdownTimeout);
+  dropdownTimeout=setTimeout(()=>renderDropdown(query),80);
+});
+document.getElementById('searchInput').addEventListener('focus',e=>{
+  if(e.target.value.trim())renderDropdown(e.target.value.trim());
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.searchrow')&&!e.target.closest('.search-dropdown'))closeDropdown();
+});
+
+/* ===== Destaques: Lançamentos + Mais Jogados ===== */
+const TOP_IDS=[35,54,115,116,60,95,83,84,220,12,140,54,53,192,196,35,131,132,151];
+// IDs únicos dos mais jogados (sem repetição)
+const TOP_UNIQUE=[...new Set(TOP_IDS)].filter(id=>GAMES.find(g=>g.id===id));
+
+function featCardHTML(g){
+  const coverHTML=coverStackHTML(g,{loading:'eager'});
+  const ribbon=g.launch?'<span class="feat-ribbon">🔥 LANÇAMENTO</span>':'';
+  return `<div class="feat-card reveal" onclick="openModal(${g.id})">
+    <div class="feat-img">${coverHTML}${ribbon}</div>
+    <div class="feat-body">
+      <div class="feat-name">${g.name}</div>
+      <button class="feat-btn" tabindex="-1">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Comprar agora
+      </button>
+    </div>
+  </div>`;
+}
+
+function renderFeatured(){
+  // Lançamentos
+  const launches=GAMES.filter(g=>g.launch);
+  document.getElementById('featLaunch').innerHTML=launches.map(featCardHTML).join('');
+  // Mais jogados (lista curada de IDs famosos)
+  const topGames=[35,54,53,115,116,60,95,83,84,220,12,140,151,131,132,192,196,27,62,23,119,89,154,167,108,76,93,202,72,97,111,205,186,81,61,34,207].reduce((acc,id)=>{
+    if(!acc.find(g=>g.id===id)){const g=GAMES.find(x=>x.id===id);if(g)acc.push(g);}
+    return acc;
+  },[]);
+  document.getElementById('featTop').innerHTML=topGames.map(featCardHTML).join('');
+  initScrollReveal();
+}
+
+
+/* ===== Scroll Reveal ===== */
+let revealObserver=null;
+function initScrollReveal(){
+  const els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(el=>el.classList.add('in-view'));return;}
+  if(!revealObserver){
+    revealObserver=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  }
+  els.forEach((el,i)=>{
+    if(!el.classList.contains('in-view')){
+      el.style.transitionDelay=(i%10)*35+'ms';
+      revealObserver.observe(el);
+    }
+  });
+}
+
+/* ===== Init ===== */
+document.getElementById('year').textContent=new Date().getFullYear();
+renderFeatured();
+render();
+initScrollReveal();
+function openModal(id){
+  cur=GAMES.find(x=>x.id===id); curKey=exKey(cur.id);
+  document.getElementById('mCover').innerHTML=coverStackHTML(cur,{loading:'eager'});
+  document.getElementById('mTitle').textContent=cur.name;
+  document.getElementById('mSub').textContent='Steam Key original · acesso vitalício';
+  let b='<span class="mb good">✓ 100% Original</span><span class="mb">⬡ Ativação Steam</span><span class="mb good">✓ Sem executáveis</span>';
+  if(cur.dlc)b+='<span class="mb amber">★ Inclui DLC</span>';
+  if(cur.launch)b+='<span class="mb amber">🔥 Lançamento</span>';
+  document.getElementById('mBadges').innerHTML=b;
+  document.getElementById('steps').innerHTML=STEPS.map((s,i)=>`<div class="sp" id="sp${i}" onclick="goStep(${i})"><span class="sp-n">0${i+1}</span><span class="sp-l">${s.l}</span></div>`).join('');
+  sIdx=0; goStep(0);
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._);t._=setTimeout(()=>t.classList.remove('show'),2400);}
+function closeModal(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow='';clearTimeout(typeT);}
+document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeDropdown();closeMenu();closeDiscord();}});
+
+function step(d){let n=sIdx+d;if(n<0||n>4)return;goStep(n);}
+function goStep(i){
+  clearTimeout(typeT);
+  sIdx=i;
+  document.querySelectorAll('.sp').forEach((el,idx)=>{el.classList.toggle('active',idx===i);el.classList.toggle('done',idx<i);});
+  document.getElementById('spBar').style.width=((i+1)/5*100)+'%';
+  const s=STEPS[i];
+  document.getElementById('panelTxt').innerHTML=`<h4>${s.t}</h4><p>${s.p}</p>`;
+  document.getElementById('prevBtn').disabled=(i===0);
+  const nb=document.getElementById('nextBtn'); nb.textContent=(i===4)?'✓ Concluído':'Próximo ›'; nb.disabled=(i===4);
+  renderStage(i);
+}
+
+function renderStage(i){
+  const stage=document.getElementById('stage');
+  const cv=coverStackHTML(cur,{loading:'eager'});
+  if(i===0){
+    stage.innerHTML=`<div class="sv-pick stage-anim"><div class="sv-card"><div class="sv-cover">${cv}</div><div class="sv-t">${cur.name}</div></div><div class="sv-cursor">👆</div></div>`;
+  } else if(i===1){
+    stage.innerHTML=`<div class="sv-ticket stage-anim"><div class="sv-ticket-h">⬡ SUA KEY ORIGINAL <span class="k">STEAM</span></div><div class="sv-key" id="svKey">•••••-•••••-•••••</div><button class="sv-copy" onclick="copyKey()">📋 Copiar</button><div class="sv-ticket-f">✓ Entrega imediata · 100% original</div></div>`;
+    revealKey();
+  } else if(i===2){
+    stage.innerHTML=`<div class="steam-win stage-anim"><div class="steam-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="steam-title">STEAM</span></div><div class="steam-menu"><span class="sm">Steam</span><span class="sm">Ver</span><span class="sm hl">Jogos</span><span class="sm">Amigos</span></div><div class="steam-drop"><div class="sd hl">＋ Ativar um produto na Steam…</div><div class="sd">Gerenciar códigos de presente</div><div class="sd">Ver lista de desejos</div></div></div>`;
+  } else if(i===3){
+    stage.innerHTML=`<div class="steam-win stage-anim"><div class="steam-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="steam-title">ATIVAÇÃO DE PRODUTO</span></div><div class="wiz"><div class="wiz-t">Ativação de Produto</div><div class="wiz-p">Insira seu código de ativação Steam:</div><div class="wiz-field"><span id="wizKey"></span><span class="caret">▌</span></div><div class="wiz-actions"><button class="wiz-btn">Cancelar</button><button class="wiz-btn pri">Avançar ›</button></div></div></div>`;
+    typeKey();
+  } else {
+    stage.innerHTML=`<div style="text-align:center" class="stage-anim"><div class="steam-win" style="margin:0 auto"><div class="steam-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="steam-title">BIBLIOTECA</span></div><div class="lib"><div class="lib-cover">${cv}</div><div class="lib-info"><div class="lib-name">${cur.name}</div><div class="lib-status">✓ Adicionado à sua biblioteca</div><button class="lib-play">▶ JOGAR</button></div></div></div></div>`;
+  }
+}
+
+function revealKey(){
+  const el=document.getElementById('svKey');if(!el)return;
+  const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let f=0;
+  clearTimeout(typeT);
+  (function tick(){
+    const out=curKey.split('').map((ch,idx)=>{if(ch==='-')return'-';return idx<f?ch:c[Math.floor(Math.random()*c.length)];}).join('');
+    el.textContent=out;
+    if(f<=curKey.length){f++;typeT=setTimeout(tick,55);}else el.textContent=curKey;
+  })();
+}
+function typeKey(){
+  const el=document.getElementById('wizKey');if(!el)return;let n=0;
+  clearTimeout(typeT);
+  (function tick(){el.textContent=curKey.slice(0,n);if(n<=curKey.length){n++;typeT=setTimeout(tick,75);}})();
+}
+function copyKey(){navigator.clipboard&&navigator.clipboard.writeText(curKey);toast('✅ Código de exemplo copiado!');}
+
+</script>
+
+<script>
+/* ===== PATCH FINAL: catálogo maior, oficial Steam, sem lag e sem reveal ===== */
+const PATCH_ADDED_GAMES = [{"name": "Counter-Strike 2", "appid": 730, "dlc": false, "launch": false}, {"name": "Dota 2", "appid": 570, "dlc": false, "launch": false}, {"name": "Team Fortress 2", "appid": 440, "dlc": false, "launch": false}, {"name": "Left 4 Dead", "appid": 500, "dlc": false, "launch": false}, {"name": "Left 4 Dead 2", "appid": 550, "dlc": true, "launch": false}, {"name": "Portal", "appid": 400, "dlc": false, "launch": false}, {"name": "Portal 2", "appid": 620, "dlc": false, "launch": false}, {"name": "Half-Life", "appid": 70, "dlc": false, "launch": false}, {"name": "Half-Life 2", "appid": 220, "dlc": false, "launch": false}, {"name": "Half-Life 2: Episode One", "appid": 380, "dlc": false, "launch": false}, {"name": "Half-Life 2: Episode Two", "appid": 420, "dlc": false, "launch": false}, {"name": "Half-Life: Alyx", "appid": 546560, "dlc": false, "launch": false}, {"name": "Counter-Strike", "appid": 10, "dlc": false, "launch": false}, {"name": "Counter-Strike: Source", "appid": 240, "dlc": false, "launch": false}, {"name": "Counter-Strike: Condition Zero", "appid": 80, "dlc": false, "launch": false}, {"name": "PUBG: BATTLEGROUNDS", "appid": 578080, "dlc": true, "launch": false}, {"name": "Apex Legends", "appid": 1172470, "dlc": false, "launch": false}, {"name": "Rust", "appid": 252490, "dlc": false, "launch": false}, {"name": "Warframe", "appid": 230410, "dlc": true, "launch": false}, {"name": "War Thunder", "appid": 236390, "dlc": true, "launch": false}, {"name": "Dead by Daylight", "appid": 381210, "dlc": true, "launch": false}, {"name": "DayZ", "appid": 221100, "dlc": false, "launch": false}, {"name": "ARMA 3", "appid": 107410, "dlc": true, "launch": false}, {"name": "Squad", "appid": 393380, "dlc": true, "launch": false}, {"name": "Hell Let Loose", "appid": 686810, "dlc": true, "launch": false}, {"name": "Insurgency: Sandstorm", "appid": 581320, "dlc": true, "launch": false}, {"name": "Hunt: Showdown 1896", "appid": 594650, "dlc": true, "launch": false}, {"name": "The Finals", "appid": 2073850, "dlc": false, "launch": false}, {"name": "Marvel Rivals", "appid": 2767030, "dlc": false, "launch": false}, {"name": "Lost Ark", "appid": 1599340, "dlc": true, "launch": false}, {"name": "Path of Exile", "appid": 238960, "dlc": true, "launch": false}, {"name": "Path of Exile 2", "appid": 2694490, "dlc": false, "launch": false}, {"name": "ELDEN RING NIGHTREIGN", "appid": 2622380, "dlc": false, "launch": false}, {"name": "Black Myth: Wukong", "appid": 2358720, "dlc": false, "launch": false}, {"name": "Helldivers 2", "appid": 553850, "dlc": true, "launch": false}, {"name": "R.E.P.O.", "appid": 3241660, "dlc": false, "launch": false}, {"name": "Schedule I", "appid": 3164500, "dlc": false, "launch": false}, {"name": "Lethal Company", "appid": 1966720, "dlc": false, "launch": false}, {"name": "Balatro", "appid": 2379780, "dlc": false, "launch": false}, {"name": "Among Us", "appid": 945360, "dlc": false, "launch": false}, {"name": "Bongo Cat", "appid": 3419430, "dlc": false, "launch": false}, {"name": "Banana", "appid": 2923300, "dlc": false, "launch": false}, {"name": "FiveM", "appid": 3240220, "dlc": false, "launch": false}, {"name": "EA SPORTS FC 24", "appid": 2195250, "dlc": true, "launch": false}, {"name": "EA SPORTS FC 25", "appid": 2669320, "dlc": true, "launch": false}, {"name": "EA SPORTS FC 26", "appid": 3405690, "dlc": true, "launch": true}, {"name": "FIFA 22", "appid": 1506830, "dlc": true, "launch": false}, {"name": "FIFA 23", "appid": 1811260, "dlc": true, "launch": false}, {"name": "Madden NFL 23", "appid": 1760250, "dlc": true, "launch": false}, {"name": "Madden NFL 24", "appid": 2140330, "dlc": true, "launch": false}, {"name": "Madden NFL 25", "appid": 2582560, "dlc": true, "launch": false}, {"name": "NBA 2K23", "appid": 1919590, "dlc": true, "launch": false}, {"name": "NBA 2K24", "appid": 2338770, "dlc": true, "launch": false}, {"name": "NBA 2K25", "appid": 2878980, "dlc": true, "launch": false}, {"name": "PGA TOUR 2K23", "appid": 1588010, "dlc": true, "launch": false}, {"name": "TopSpin 2K25", "appid": 1785650, "dlc": true, "launch": false}, {"name": "WWE 2K23", "appid": 1942660, "dlc": true, "launch": false}, {"name": "WWE 2K24", "appid": 2315690, "dlc": true, "launch": false}, {"name": "Forza Motorsport", "appid": 2440510, "dlc": true, "launch": false}, {"name": "Forza Horizon 4", "appid": 1293830, "dlc": true, "launch": false}, {"name": "Forza Horizon 5", "appid": 1551360, "dlc": true, "launch": false}, {"name": "Assetto Corsa Competizione", "appid": 805550, "dlc": true, "launch": false}, {"name": "CarX Drift Racing Online", "appid": 635260, "dlc": true, "launch": false}, {"name": "Wreckfest", "appid": 228380, "dlc": true, "launch": false}, {"name": "F1 22", "appid": 1692250, "dlc": true, "launch": false}, {"name": "F1 23", "appid": 2108330, "dlc": true, "launch": false}, {"name": "F1 24", "appid": 2488620, "dlc": true, "launch": false}, {"name": "F1 Manager 2022", "appid": 1708520, "dlc": false, "launch": false}, {"name": "F1 Manager 2023", "appid": 2287220, "dlc": false, "launch": false}, {"name": "F1 Manager 2024", "appid": 2591280, "dlc": false, "launch": false}, {"name": "Need for Speed Heat", "appid": 1222680, "dlc": false, "launch": false}, {"name": "Need for Speed Unbound", "appid": 1846380, "dlc": false, "launch": false}, {"name": "Need for Speed Payback", "appid": 1262580, "dlc": false, "launch": false}, {"name": "Need for Speed Hot Pursuit Remastered", "appid": 1328660, "dlc": false, "launch": false}, {"name": "DiRT Rally 2.0", "appid": 690790, "dlc": true, "launch": false}, {"name": "DiRT 5", "appid": 1038250, "dlc": true, "launch": false}, {"name": "Project CARS 3", "appid": 958400, "dlc": true, "launch": false}, {"name": "MotoGP 24", "appid": 2581700, "dlc": false, "launch": false}, {"name": "Ride 4", "appid": 1259980, "dlc": true, "launch": false}, {"name": "RIDE 6", "appid": 3285040, "dlc": false, "launch": true}, {"name": "Grand Theft Auto V Legacy", "appid": 271590, "dlc": true, "launch": false}, {"name": "Grand Theft Auto IV: Complete Edition", "appid": 12210, "dlc": true, "launch": false}, {"name": "Grand Theft Auto III", "appid": 12100, "dlc": false, "launch": false}, {"name": "Grand Theft Auto: Vice City", "appid": 12110, "dlc": false, "launch": false}, {"name": "Grand Theft Auto: San Andreas", "appid": 12120, "dlc": false, "launch": false}, {"name": "Grand Theft Auto: The Trilogy – The Definitive Edition", "appid": 1547000, "dlc": false, "launch": false}, {"name": "Red Dead Redemption 2", "appid": 1174180, "dlc": true, "launch": false}, {"name": "Red Dead Online", "appid": 1404210, "dlc": true, "launch": false}, {"name": "L.A. Noire", "appid": 110800, "dlc": true, "launch": false}, {"name": "Max Payne 3", "appid": 204100, "dlc": true, "launch": false}, {"name": "Bully: Scholarship Edition", "appid": 12200, "dlc": false, "launch": false}, {"name": "Manhunt", "appid": 12130, "dlc": false, "launch": false}, {"name": "Assassin's Creed", "appid": 15100, "dlc": false, "launch": false}, {"name": "Assassin's Creed II", "appid": 33230, "dlc": true, "launch": false}, {"name": "Assassin's Creed Brotherhood", "appid": 48190, "dlc": true, "launch": false}, {"name": "Assassin's Creed Revelations", "appid": 201870, "dlc": true, "launch": false}, {"name": "Assassin's Creed III Remastered", "appid": 911400, "dlc": true, "launch": false}, {"name": "Assassin's Creed Liberation HD", "appid": 260210, "dlc": false, "launch": false}, {"name": "Assassin's Creed IV Black Flag", "appid": 242050, "dlc": true, "launch": false}, {"name": "Assassin's Creed Freedom Cry", "appid": 277590, "dlc": false, "launch": false}, {"name": "Assassin's Creed Rogue", "appid": 311560, "dlc": true, "launch": false}, {"name": "Assassin's Creed Unity", "appid": 289650, "dlc": true, "launch": false}, {"name": "Assassin's Creed Syndicate", "appid": 368500, "dlc": true, "launch": false}, {"name": "Assassin's Creed Origins", "appid": 582160, "dlc": true, "launch": false}, {"name": "Assassin's Creed Odyssey", "appid": 812140, "dlc": true, "launch": false}, {"name": "Assassin's Creed Valhalla", "appid": 2208920, "dlc": true, "launch": false}, {"name": "Assassin's Creed Mirage", "appid": 3035570, "dlc": true, "launch": false}, {"name": "Assassin's Creed Shadows", "appid": 3159330, "dlc": true, "launch": true}, {"name": "Resident Evil", "appid": 304240, "dlc": false, "launch": false}, {"name": "Resident Evil 0", "appid": 339340, "dlc": false, "launch": false}, {"name": "Resident Evil Revelations", "appid": 222480, "dlc": true, "launch": false}, {"name": "Resident Evil Revelations 2", "appid": 287290, "dlc": true, "launch": false}, {"name": "Resident Evil Operation Raccoon City", "appid": 209100, "dlc": true, "launch": false}, {"name": "Umbrella Corps", "appid": 390340, "dlc": true, "launch": false}, {"name": "Resident Evil Resistance", "appid": 952070, "dlc": true, "launch": false}, {"name": "Resident Evil Re:Verse", "appid": 1236300, "dlc": false, "launch": false}, {"name": "God of War", "appid": 1593500, "dlc": false, "launch": false}, {"name": "God of War Ragnarök", "appid": 2322010, "dlc": true, "launch": false}, {"name": "Horizon Zero Dawn Complete Edition", "appid": 1151640, "dlc": true, "launch": false}, {"name": "Horizon Zero Dawn Remastered", "appid": 2561580, "dlc": true, "launch": false}, {"name": "Horizon Forbidden West Complete Edition", "appid": 2420110, "dlc": true, "launch": false}, {"name": "LEGO Horizon Adventures", "appid": 2428810, "dlc": false, "launch": false}, {"name": "Days Gone", "appid": 1259420, "dlc": false, "launch": false}, {"name": "Returnal", "appid": 1649240, "dlc": false, "launch": false}, {"name": "Sackboy: A Big Adventure", "appid": 1599660, "dlc": false, "launch": false}, {"name": "Ratchet & Clank: Rift Apart", "appid": 1895880, "dlc": false, "launch": false}, {"name": "LEGO Star Wars: The Skywalker Saga", "appid": 920210, "dlc": true, "launch": false}, {"name": "LEGO Marvel Super Heroes", "appid": 249130, "dlc": true, "launch": false}, {"name": "LEGO Marvel Super Heroes 2", "appid": 647830, "dlc": true, "launch": false}, {"name": "LEGO Marvel's Avengers", "appid": 405310, "dlc": true, "launch": false}, {"name": "LEGO Batman: The Videogame", "appid": 21000, "dlc": false, "launch": false}, {"name": "LEGO Batman 2: DC Super Heroes", "appid": 213330, "dlc": false, "launch": false}, {"name": "LEGO Batman 3: Beyond Gotham", "appid": 313690, "dlc": true, "launch": false}, {"name": "LEGO DC Super-Villains", "appid": 829110, "dlc": true, "launch": false}, {"name": "LEGO Jurassic World", "appid": 352400, "dlc": true, "launch": false}, {"name": "LEGO Harry Potter: Years 1-4", "appid": 21130, "dlc": false, "launch": false}, {"name": "LEGO Harry Potter: Years 5-7", "appid": 204120, "dlc": false, "launch": false}, {"name": "LEGO City Undercover", "appid": 578330, "dlc": false, "launch": false}, {"name": "LEGO Worlds", "appid": 332310, "dlc": true, "launch": false}, {"name": "LEGO NINJAGO Movie Video Game", "appid": 640590, "dlc": false, "launch": false}, {"name": "The LEGO Movie Videogame", "appid": 267530, "dlc": false, "launch": false}, {"name": "The LEGO Movie 2 Videogame", "appid": 881320, "dlc": false, "launch": false}, {"name": "LEGO The Incredibles", "appid": 818320, "dlc": false, "launch": false}, {"name": "LEGO Builder's Journey", "appid": 1544360, "dlc": false, "launch": false}, {"name": "LEGO 2K Drive", "appid": 1451810, "dlc": true, "launch": false}, {"name": "DRAGON BALL XENOVERSE", "appid": 323470, "dlc": true, "launch": false}, {"name": "DRAGON BALL XENOVERSE 2", "appid": 454650, "dlc": true, "launch": false}, {"name": "DRAGON BALL FighterZ", "appid": 678950, "dlc": true, "launch": false}, {"name": "DRAGON BALL Z: KAKAROT", "appid": 851850, "dlc": true, "launch": false}, {"name": "DRAGON BALL: THE BREAKERS", "appid": 1276760, "dlc": true, "launch": false}, {"name": "DRAGON BALL: Sparking! ZERO", "appid": 1790600, "dlc": true, "launch": false}, {"name": "NARUTO SHIPPUDEN: Ultimate Ninja STORM", "appid": 495140, "dlc": true, "launch": false}, {"name": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 2", "appid": 543870, "dlc": true, "launch": false}, {"name": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 3 Full Burst", "appid": 234670, "dlc": true, "launch": false}, {"name": "NARUTO SHIPPUDEN: Ultimate Ninja STORM 4", "appid": 349040, "dlc": true, "launch": false}, {"name": "NARUTO TO BORUTO: SHINOBI STRIKER", "appid": 633230, "dlc": true, "launch": false}, {"name": "NARUTO X BORUTO Ultimate Ninja STORM CONNECTIONS", "appid": 1020790, "dlc": true, "launch": false}, {"name": "ONE PIECE: PIRATE WARRIORS 3", "appid": 331600, "dlc": true, "launch": false}, {"name": "ONE PIECE: PIRATE WARRIORS 4", "appid": 1089090, "dlc": true, "launch": false}, {"name": "ONE PIECE ODYSSEY", "appid": 814000, "dlc": true, "launch": false}, {"name": "Attack on Titan", "appid": 449800, "dlc": true, "launch": false}, {"name": "Attack on Titan 2", "appid": 601050, "dlc": true, "launch": false}, {"name": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles", "appid": 1490890, "dlc": true, "launch": false}, {"name": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2", "appid": 2928600, "dlc": true, "launch": false}, {"name": "FINAL FANTASY VII", "appid": 39140, "dlc": false, "launch": false}, {"name": "FINAL FANTASY VIII Remastered", "appid": 1026680, "dlc": false, "launch": false}, {"name": "FINAL FANTASY IX", "appid": 377840, "dlc": false, "launch": false}, {"name": "FINAL FANTASY X/X-2 HD Remaster", "appid": 359870, "dlc": false, "launch": false}, {"name": "FINAL FANTASY XII THE ZODIAC AGE", "appid": 595520, "dlc": false, "launch": false}, {"name": "FINAL FANTASY XIII", "appid": 292120, "dlc": false, "launch": false}, {"name": "FINAL FANTASY XIII-2", "appid": 292140, "dlc": false, "launch": false}, {"name": "LIGHTNING RETURNS: FINAL FANTASY XIII", "appid": 345350, "dlc": false, "launch": false}, {"name": "FINAL FANTASY XIV Online", "appid": 39210, "dlc": true, "launch": false}, {"name": "FINAL FANTASY XV WINDOWS EDITION", "appid": 637650, "dlc": true, "launch": false}, {"name": "FINAL FANTASY TYPE-0 HD", "appid": 340170, "dlc": false, "launch": false}, {"name": "CHRONO TRIGGER", "appid": 613830, "dlc": false, "launch": false}, {"name": "NieR Replicant ver.1.22474487139...", "appid": 1113560, "dlc": false, "launch": false}, {"name": "NieR:Automata", "appid": 524220, "dlc": true, "launch": false}, {"name": "DRAGON QUEST XI S", "appid": 1295510, "dlc": false, "launch": false}, {"name": "Persona 3 Reload", "appid": 2161700, "dlc": true, "launch": false}, {"name": "Persona 4 Golden", "appid": 1113000, "dlc": false, "launch": false}, {"name": "Persona 5 Royal", "appid": 1687950, "dlc": true, "launch": false}, {"name": "Persona 5 Strikers", "appid": 1382330, "dlc": true, "launch": false}, {"name": "Persona 5 Tactica", "appid": 2254740, "dlc": true, "launch": false}, {"name": "Shin Megami Tensei V: Vengeance", "appid": 1875830, "dlc": true, "launch": false}, {"name": "Metaphor: ReFantazio", "appid": 2679460, "dlc": false, "launch": false}, {"name": "Yakuza Kiwami", "appid": 834530, "dlc": false, "launch": false}, {"name": "Yakuza Kiwami 2", "appid": 927380, "dlc": false, "launch": false}, {"name": "Yakuza 3 Remastered", "appid": 1088710, "dlc": false, "launch": false}, {"name": "Yakuza 4 Remastered", "appid": 1105500, "dlc": false, "launch": false}, {"name": "Yakuza 5 Remastered", "appid": 1105510, "dlc": false, "launch": false}, {"name": "Yakuza 6: The Song of Life", "appid": 1388590, "dlc": false, "launch": false}, {"name": "Yakuza: Like a Dragon", "appid": 1235140, "dlc": true, "launch": false}, {"name": "Like a Dragon: Ishin!", "appid": 1805480, "dlc": true, "launch": false}, {"name": "Like a Dragon Gaiden: The Man Who Erased His Name", "appid": 2375550, "dlc": true, "launch": false}, {"name": "Like a Dragon: Infinite Wealth", "appid": 2072450, "dlc": true, "launch": false}, {"name": "Judgment", "appid": 2058180, "dlc": true, "launch": false}, {"name": "Lost Judgment", "appid": 2058190, "dlc": true, "launch": false}, {"name": "Tomb Raider", "appid": 203160, "dlc": true, "launch": false}, {"name": "Tomb Raider: Anniversary", "appid": 8000, "dlc": false, "launch": false}, {"name": "Tomb Raider: Legend", "appid": 7000, "dlc": false, "launch": false}, {"name": "Tomb Raider: Underworld", "appid": 8140, "dlc": false, "launch": false}, {"name": "Tomb Raider I-III Remastered", "appid": 2478970, "dlc": false, "launch": false}, {"name": "Tomb Raider IV-VI Remastered", "appid": 2525380, "dlc": false, "launch": false}, {"name": "Rise of the Tomb Raider", "appid": 391220, "dlc": true, "launch": false}, {"name": "Shadow of the Tomb Raider", "appid": 750920, "dlc": true, "launch": false}, {"name": "UNCHARTED: Legacy of Thieves Collection", "appid": 1659420, "dlc": false, "launch": false}, {"name": "Monster Hunter: World", "appid": 582010, "dlc": true, "launch": false}, {"name": "Monster Hunter Rise", "appid": 1446780, "dlc": true, "launch": false}, {"name": "Monster Hunter Stories", "appid": 2356560, "dlc": false, "launch": false}, {"name": "Monster Hunter Stories 2: Wings of Ruin", "appid": 1277400, "dlc": true, "launch": false}, {"name": "Monster Hunter Stories 3: Twisted Reflection", "appid": 3606410, "dlc": false, "launch": true}, {"name": "Street Fighter 30th Anniversary Collection", "appid": 586200, "dlc": false, "launch": false}, {"name": "Street Fighter V", "appid": 310950, "dlc": true, "launch": false}, {"name": "Street Fighter 6", "appid": 1364780, "dlc": true, "launch": false}, {"name": "TEKKEN 7", "appid": 389730, "dlc": true, "launch": false}, {"name": "TEKKEN 8", "appid": 1778820, "dlc": true, "launch": false}, {"name": "Mortal Kombat 1", "appid": 1971870, "dlc": true, "launch": false}, {"name": "Mortal Kombat 11", "appid": 976310, "dlc": true, "launch": false}, {"name": "Mortal Kombat X", "appid": 307780, "dlc": true, "launch": false}, {"name": "Injustice 2", "appid": 627270, "dlc": true, "launch": false}, {"name": "Far Cry 3", "appid": 220240, "dlc": true, "launch": false}, {"name": "Far Cry 4", "appid": 298110, "dlc": true, "launch": false}, {"name": "Far Cry 5", "appid": 552520, "dlc": true, "launch": false}, {"name": "Far Cry New Dawn", "appid": 939960, "dlc": true, "launch": false}, {"name": "Far Cry 6", "appid": 2369390, "dlc": true, "launch": false}, {"name": "Watch_Dogs", "appid": 243470, "dlc": true, "launch": false}, {"name": "Watch Dogs 2", "appid": 447040, "dlc": true, "launch": false}, {"name": "Watch Dogs: Legion", "appid": 2239550, "dlc": true, "launch": false}, {"name": "Tom Clancy's Rainbow Six Siege", "appid": 359550, "dlc": true, "launch": false}, {"name": "Tom Clancy's Ghost Recon Wildlands", "appid": 460930, "dlc": true, "launch": false}, {"name": "Tom Clancy's Ghost Recon Breakpoint", "appid": 2231380, "dlc": true, "launch": false}, {"name": "Tom Clancy's The Division", "appid": 365590, "dlc": true, "launch": false}, {"name": "Tom Clancy's The Division 2", "appid": 2221490, "dlc": true, "launch": false}, {"name": "The Elder Scrolls III: Morrowind", "appid": 22320, "dlc": false, "launch": false}, {"name": "The Elder Scrolls IV: Oblivion", "appid": 22330, "dlc": true, "launch": false}, {"name": "The Elder Scrolls V: Skyrim Special Edition", "appid": 489830, "dlc": true, "launch": false}, {"name": "Fallout 3: Game of the Year Edition", "appid": 22370, "dlc": true, "launch": false}, {"name": "Fallout: New Vegas", "appid": 22380, "dlc": true, "launch": false}, {"name": "Fallout 4", "appid": 377160, "dlc": true, "launch": false}, {"name": "Fallout 76", "appid": 1151340, "dlc": true, "launch": false}, {"name": "DOOM", "appid": 379720, "dlc": true, "launch": false}, {"name": "DOOM Eternal", "appid": 782330, "dlc": true, "launch": false}, {"name": "DOOM: The Dark Ages", "appid": 3017860, "dlc": true, "launch": false}, {"name": "Starfield", "appid": 1716740, "dlc": true, "launch": false}, {"name": "Hi-Fi RUSH", "appid": 1817230, "dlc": false, "launch": false}, {"name": "Indiana Jones and the Great Circle", "appid": 2677660, "dlc": true, "launch": false}, {"name": "Hollow Knight", "appid": 367520, "dlc": false, "launch": false}, {"name": "Celeste", "appid": 504230, "dlc": false, "launch": false}, {"name": "Hades", "appid": 1145360, "dlc": false, "launch": false}, {"name": "Hades II", "appid": 1145350, "dlc": false, "launch": false}, {"name": "Hollow Knight: Silksong", "appid": 1030300, "dlc": false, "launch": true}, {"name": "Cuphead", "appid": 268910, "dlc": true, "launch": false}, {"name": "Dead Cells", "appid": 588650, "dlc": true, "launch": false}, {"name": "Stardew Valley", "appid": 413150, "dlc": false, "launch": false}, {"name": "Terraria", "appid": 105600, "dlc": false, "launch": false}, {"name": "Undertale", "appid": 391540, "dlc": false, "launch": false}, {"name": "Deltarune", "appid": 1671210, "dlc": false, "launch": false}, {"name": "Slay the Spire", "appid": 646570, "dlc": false, "launch": false}, {"name": "The Binding of Isaac: Rebirth", "appid": 250900, "dlc": true, "launch": false}, {"name": "Risk of Rain 2", "appid": 632360, "dlc": true, "launch": false}, {"name": "Vampire Survivors", "appid": 1794680, "dlc": true, "launch": false}, {"name": "Dave the Diver", "appid": 1868140, "dlc": false, "launch": false}, {"name": "PowerWash Simulator", "appid": 1290000, "dlc": true, "launch": false}, {"name": "Cult of the Lamb", "appid": 1313140, "dlc": true, "launch": false}, {"name": "Sea of Stars", "appid": 1244090, "dlc": false, "launch": false}, {"name": "Pizza Tower", "appid": 2231450, "dlc": false, "launch": false}, {"name": "Chained Together", "appid": 2567870, "dlc": false, "launch": false}, {"name": "Only Up!", "appid": 2381590, "dlc": false, "launch": false}, {"name": "RimWorld", "appid": 294100, "dlc": true, "launch": false}, {"name": "Factorio", "appid": 427520, "dlc": false, "launch": false}, {"name": "Satisfactory", "appid": 526870, "dlc": false, "launch": false}, {"name": "Kenshi", "appid": 233860, "dlc": false, "launch": false}, {"name": "Oxygen Not Included", "appid": 457140, "dlc": true, "launch": false}, {"name": "Dyson Sphere Program", "appid": 1366540, "dlc": false, "launch": false}, {"name": "The Planet Crafter", "appid": 1284190, "dlc": false, "launch": false}, {"name": "ASTRONEER", "appid": 361420, "dlc": false, "launch": false}, {"name": "Space Engineers", "appid": 244850, "dlc": true, "launch": false}, {"name": "Mount & Blade II: Bannerlord", "appid": 261550, "dlc": true, "launch": false}, {"name": "Manor Lords", "appid": 1363080, "dlc": false, "launch": false}, {"name": "Crusader Kings III", "appid": 1158310, "dlc": true, "launch": false}, {"name": "Hearts of Iron IV", "appid": 394360, "dlc": true, "launch": false}, {"name": "Europa Universalis IV", "appid": 236850, "dlc": true, "launch": false}, {"name": "Victoria 3", "appid": 529340, "dlc": true, "launch": false}, {"name": "Stellaris", "appid": 281990, "dlc": true, "launch": false}, {"name": "Total War: WARHAMMER", "appid": 364360, "dlc": true, "launch": false}, {"name": "Total War: WARHAMMER II", "appid": 594570, "dlc": true, "launch": false}, {"name": "Total War: WARHAMMER III", "appid": 1142710, "dlc": true, "launch": false}, {"name": "Sid Meier's Civilization VI", "appid": 289070, "dlc": true, "launch": false}, {"name": "Sid Meier's Civilization VII", "appid": 1295660, "dlc": true, "launch": false}, {"name": "Age of Empires II: Definitive Edition", "appid": 813780, "dlc": true, "launch": false}, {"name": "Age of Empires IV: Anniversary Edition", "appid": 1466860, "dlc": true, "launch": false}, {"name": "Cities: Skylines", "appid": 255710, "dlc": true, "launch": false}, {"name": "Cities: Skylines II", "appid": 949230, "dlc": true, "launch": false}, {"name": "Football Manager 2024", "appid": 2252570, "dlc": false, "launch": false}, {"name": "Football Manager 2026", "appid": 3557190, "dlc": false, "launch": true}, {"name": "Phasmophobia", "appid": 739630, "dlc": false, "launch": false}, {"name": "Outlast", "appid": 238320, "dlc": false, "launch": false}, {"name": "Outlast 2", "appid": 414700, "dlc": false, "launch": false}, {"name": "The Outlast Trials", "appid": 1304930, "dlc": true, "launch": false}, {"name": "SILENT HILL 2", "appid": 2124490, "dlc": false, "launch": false}, {"name": "SILENT HILL f", "appid": 2947440, "dlc": false, "launch": true}, {"name": "Amnesia: The Dark Descent", "appid": 57300, "dlc": false, "launch": false}, {"name": "Amnesia: Rebirth", "appid": 999220, "dlc": false, "launch": false}, {"name": "SOMA", "appid": 282140, "dlc": false, "launch": false}, {"name": "Alien: Isolation", "appid": 214490, "dlc": true, "launch": false}, {"name": "The Evil Within", "appid": 268050, "dlc": true, "launch": false}, {"name": "The Evil Within 2", "appid": 601430, "dlc": true, "launch": false}, {"name": "Little Nightmares", "appid": 424840, "dlc": true, "launch": false}, {"name": "Little Nightmares II", "appid": 860510, "dlc": true, "launch": false}, {"name": "Little Nightmares III", "appid": 1392860, "dlc": false, "launch": true}];
+const PATCH_PRICE_CACHE = new Map();
+let PATCH_DISPLAY_LIMIT = 84;
+let PATCH_STEAM_APPS = [];
+let PATCH_STEAM_LOADING = false;
+let PATCH_STEAM_READY = false;
+let PATCH_LAST_RENDER_KEY = '';
+
+function patchNorm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
+function patchSteamId(g){return g.steamAppId || g.appid || STEAM[g.id] || null;}
+function patchBRL(v){return 'R$ '+Number(v).toFixed(2).replace('.',',');}
+function patchEscape(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+
+(function mergePatchGames(){
+  const byName = new Map(GAMES.map(g=>[patchNorm(g.name), g]));
+  let maxId = Math.max(...GAMES.map(g=>Number(g.id)||0), 0);
+  for(const e of PATCH_ADDED_GAMES){
+    const k = patchNorm(e.name);
+    const found = byName.get(k);
+    if(found){
+      found.dlc = !!e.dlc;
+      found.launch = !!e.launch || !!found.launch;
+      found.steamAppId = e.appid;
+      STEAM[found.id] = e.appid; // corrige capa antiga/errada para a oficial da Steam
+    }else{
+      const g={id:++maxId,name:e.name,dlc:!!e.dlc,launch:!!e.launch,steamAppId:e.appid,collection:true};
+      GAMES.push(g); byName.set(k,g); STEAM[g.id]=e.appid;
+    }
+  }
+  GAMES.sort((a,b)=>a.name.localeCompare(b.name,'pt-BR',{sensitivity:'base'}));
+})();
+
+function initScrollReveal(){ /* removido para não lagar */ }
+
+function officialSteamImages(appid){
+  if(!appid)return [];
+  return [
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appid}/library_600x900_2x.jpg`,
+    `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${appid}/library_600x900_2x.jpg`,
+    `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/library_600x900_2x.jpg`,
+    `https://cdn.akamai.steamstatic.com/steam/apps/${appid}/library_600x900_2x.jpg`,
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appid}/library_600x900.jpg`,
+    `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/library_600x900.jpg`,
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appid}/capsule_616x353.jpg`,
+    `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/capsule_616x353.jpg`,
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appid}/header.jpg`,
+    `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/header.jpg`
+  ];
+}
+coverList = function(g){
+  const appid = patchSteamId(g);
+  return officialSteamImages(appid);
+};
+imgHTML = function(g,opt={}){
+  const urls=coverList(g);
+  if(!urls.length)return '';
+  const srcs=urls.map(encodeURIComponent).join('|');
+  const loading=opt.loading||'lazy';
+  const cls=opt.className?` class="${patchEscape(opt.className)}"`:'';
+  return `<img${cls} loading="${loading}" decoding="async" referrerpolicy="no-referrer" src="${patchEscape(urls[0])}" data-srcs="${srcs}" data-img-idx="0" alt="${patchEscape(g.name)}" onload="this.classList.add('loaded')" onerror="nextImg(this)">`;
+};
+coverStackHTML = function(g,opt={}){return phHTML(g)+imgHTML(g,opt);};
+
+function pixIcon(){
+  return `<span class="pix-badge" aria-label="Pix">
+    <svg viewBox="0 0 64 64" fill="none"><rect x="18" y="6" width="28" height="28" rx="7" transform="rotate(45 32 20)" fill="#1dd3bd"/><rect x="18" y="30" width="28" height="28" rx="7" transform="rotate(45 32 44)" fill="#1dd3bd" opacity=".9"/><path d="M23 24l9-9 9 9-9 9-9-9Zm0 16l9-9 9 9-9 9-9-9Z" fill="#083d3a"/></svg>
+  </span>`;
+}
+
+function patchKnownCheap(g){
+  const id = patchSteamId(g);
+  if(PATCH_PRICE_CACHE.has(id))return PATCH_PRICE_CACHE.get(id).cheap;
+  const cheapNames = ['terraria','stardew valley','left 4 dead 2','portal 2','hollow knight','balatro','repo','r e p o','schedule i','lethal company','vampire survivors','undertale','cuphead','celeste','among us','banana','bongo cat'];
+  return cheapNames.some(t=>patchNorm(g.name).includes(patchNorm(t)));
+}
+function priceSet(g){
+  const cheap = patchKnownCheap(g);
+  return cheap
+    ? {base:17.99, dlc:19.99, deluxe:21.99}
+    : {base:29.99, dlc:35.99, deluxe:37.99};
+}
+function selectedPrice(g){const p=priceSet(g); return g.dlc?p.dlc:p.base;}
+
+async function hydratePricesFor(list){
+  const ids = [...new Set(list.map(patchSteamId).filter(Boolean).filter(id=>!PATCH_PRICE_CACHE.has(id)))].slice(0,32);
+  if(!ids.length)return;
+  try{
+    const chunks=[]; for(let i=0;i<ids.length;i+=12)chunks.push(ids.slice(i,i+12));
+    let changed=false;
+    for(const ch of chunks){
+      const url='https://store.steampowered.com/api/appdetails?cc=br&l=portuguese&filters=price_overview,is_free&appids='+ch.join(',');
+      const data=await fetch(url,{cache:'force-cache'}).then(r=>r.json());
+      for(const id of ch){
+        const d=data[id]?.data;
+        let cheap=false, seen=false;
+        if(d){
+          seen=true;
+          if(d.is_free)cheap=true;
+          if(d.price_overview && typeof d.price_overview.final==='number')cheap=d.price_overview.final<5000;
+        }
+        PATCH_PRICE_CACHE.set(id,{cheap,seen});
+        changed=true;
+      }
+    }
+    if(changed) requestAnimationFrame(()=>render(false));
+  }catch(e){ /* se o navegador bloquear CORS, usa preço padrão sem travar */ }
+}
+
+function getBaseList(){
+  let list=GAMES;
+  const q=patchNorm(query);
+  if(q)list=list.filter(g=>patchNorm(g.name).includes(q));
+  if(activeFilter==='launch')list=list.filter(g=>g.launch);
+  else if(activeFilter==='dlc')list=list.filter(g=>g.dlc);
+  else if(activeFilter==='base')list=list.filter(g=>!g.dlc);
+  if(activeCat)list=list.filter(g=>matchesCat(g,activeCat) || (activeCat==='sports' && /fifa|fc |nba|wwe|f1|madden|pga|topspin|football manager/i.test(g.name)));
+  return list;
+}
+
+async function loadSteamCatalog(){
+  if(PATCH_STEAM_READY || PATCH_STEAM_LOADING)return;
+  PATCH_STEAM_LOADING=true;
+  try{
+    const data=await fetch('https://api.steampowered.com/ISteamApps/GetAppList/v2/?format=json',{cache:'force-cache'}).then(r=>r.json());
+    PATCH_STEAM_APPS=(data.applist?.apps||[]).filter(a=>a && a.appid && a.name && a.name.length>1);
+    PATCH_STEAM_READY=true;
+  }catch(e){PATCH_STEAM_READY=false;}
+  PATCH_STEAM_LOADING=false;
+}
+loadSteamCatalog();
+
+visible = function(){
+  let list=getBaseList();
+  const q=patchNorm(query);
+  if(q.length>=3 && PATCH_STEAM_APPS.length){
+    const existing = new Set(GAMES.map(g=>patchNorm(g.name)));
+    const extra = PATCH_STEAM_APPS
+      .filter(a=>patchNorm(a.name).includes(q) && !existing.has(patchNorm(a.name)))
+      .slice(0,160)
+      .map(a=>({id:'steam-'+a.appid,name:a.name,dlc:false,launch:false,steamAppId:a.appid,remote:true}));
+    list = list.concat(extra);
+  }
+  return list;
+};
+
+function cardHTML(g,idx){
+  const gid=String(g.id);
+  const p=priceSet(g);
+  const now=selectedPrice(g);
+  const coverHTML=coverStackHTML(g,{loading:idx<18?'eager':'lazy'});
+  return `<div class="card" data-gid="${patchEscape(gid)}" data-appid="${patchSteamId(g)||''}" onclick="openModalByKey('${patchEscape(gid)}')">
+    ${g.launch?'<span class="ribbon">LANÇAMENTO</span>':''}
+    <div class="card-media">${coverHTML}</div>
+    <div class="card-body">
+      <div class="card-title">${patchEscape(g.name)}</div>
+      <div class="price-line"><div class="price-copy"><span class="price-now">${patchBRL(now)}+</span><span class="price-pix">À vista no Pix</span></div>${pixIcon()}</div>
+      <button class="btn" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg> Comprar agora</button>
+    </div>
+  </div>`;
+}
+
+render = function(reset=true){
+  if(reset===true){
+    const key=query+'|'+activeFilter+'|'+activeCat;
+    if(key!==PATCH_LAST_RENDER_KEY){PATCH_DISPLAY_LIMIT=84;PATCH_LAST_RENDER_KEY=key;}
+  }
+  const list=visible();
+  const isFiltered=query||activeFilter!=='all'||activeCat;
+  document.getElementById('featuredSection').style.display=isFiltered?'none':'';
+  const countEl=document.getElementById('count');
+  if(countEl)countEl.textContent=list.length+(list.length===1?' jogo':' jogos');
+  if(!list.length){
+    grid.innerHTML='<div class="empty"><div class="big">🔍</div>Nenhum jogo encontrado. Digite pelo menos 3 letras para buscar no catálogo completo da Steam.</div>';
+    if(query && query.length>=3)loadSteamCatalog();
+    return;
+  }
+  const shown=list.slice(0,PATCH_DISPLAY_LIMIT);
+  grid.innerHTML=shown.map(cardHTML).join('') + (list.length>shown.length?`<div class="load-more-wrap"><button class="load-more" onclick="loadMoreGames(${list.length})">Carregar mais jogos (${list.length-shown.length})</button></div>`:'');
+  hydratePricesFor(shown);
+  if(query && query.length>=3)loadSteamCatalog().then(()=>{if(query)render(false);});
+};
+
+function loadMoreGames(total){PATCH_DISPLAY_LIMIT=Math.min(total,PATCH_DISPLAY_LIMIT+60);render(false);}
+window.addEventListener('scroll',()=>{
+  if((window.innerHeight+window.scrollY) > document.body.offsetHeight-900){
+    const total=visible().length;
+    if(PATCH_DISPLAY_LIMIT<total){PATCH_DISPLAY_LIMIT=Math.min(total,PATCH_DISPLAY_LIMIT+48);requestAnimationFrame(()=>render(false));}
+  }
+},{passive:true});
+
+function openModalByKey(key){
+  const g=GAMES.find(x=>String(x.id)===String(key)) || visible().find(x=>String(x.id)===String(key));
+  if(g)openModal(g.id);
+}
+
+openModal = function(id){
+  cur=GAMES.find(x=>String(x.id)===String(id)) || visible().find(x=>String(x.id)===String(id));
+  if(!cur)return;
+  const p=priceSet(cur);
+  const variants = cur.dlc
+    ? [
+      {id:'base',name:`${cur.name} (Sem DLCs)`,sub:'Versão base',price:p.base},
+      {id:'dlc',name:`${cur.name} (Todas as DLCs)`,sub:'Pacote completo',price:p.dlc}
+    ]
+    : [
+      {id:'base',name:`${cur.name} (Sem DLCs)`,sub:'Versão padrão',price:p.base},
+      {id:'deluxe',name:`${cur.name} Deluxe Edition`,sub:'Edição deluxe',price:p.deluxe}
+    ];
+  let selected=variants[0];
+  const overlay=document.getElementById('overlay');
+  document.querySelector('.modal-top').innerHTML=`<button class="x" onclick="closeModal()" aria-label="Voltar">‹</button><div class="prod-top-title" style="font-weight:900;font-style:italic;font-size:24px;color:#fff">ATACADO KEYS</div><button class="x" onclick="closeModal()" aria-label="Fechar">✕</button>`;
+  function draw(){
+    document.querySelector('.modal-body').innerHTML=`
+      <div class="product-view">
+        <div class="product-head">
+          <div class="product-cover">${coverStackHTML(cur,{loading:'eager'})}</div>
+          <div class="product-info"><h2>${patchEscape(cur.name)}</h2><span class="steam-chip">STEAM</span></div>
+        </div>
+        <div class="variant-list">
+          ${variants.map(v=>`<div class="variant ${v.id===selected.id?'selected':''}" data-var="${v.id}">
+            <span class="var-radio"></span><div class="var-text">${patchEscape(v.name)}<div class="var-sub">${patchEscape(v.sub)}</div></div><div class="var-price">${patchBRL(v.price)}</div>
+          </div>`).join('')}
+        </div>
+        <div class="stock-line"><span>📩 Mídia digital</span><span>|</span><span style="color:#42e58f">●</span><span>${8+(Number(cur.id)||patchSteamId(cur)||1)%9} em estoque</span></div>
+        <div class="product-price">${patchBRL(selected.price)}</div>
+        <div><span class="product-old">R$ 399,99</span> <span style="display:inline-block;background:#203d63;color:#9cc8ff;border:1px solid #4973b5;border-radius:8px;padding:5px 9px;font-weight:900;margin-left:8px">92% OFF</span></div>
+        <div style="color:#aaa;margin-top:8px">À vista no Pix</div>
+        <div class="product-actions">
+          <button class="buy-main" onclick="toast('Pedido de demonstração criado')">Comprar agora</button>
+          <button class="cart-main" onclick="toast('Adicionado ao carrinho')">Adicionar ao carrinho</button>
+        </div>
+        <div class="product-desc">
+          <h3>Descrição do produto</h3>
+          <ul>
+            <li>🔥 <b>Sem comissão</b> ao pagar via Pix. O preço não muda.</li>
+            <li>🔥 <b>Entrega instantânea</b> da key após a confirmação do pagamento.</li>
+          </ul>
+        </div>
+        <div class="product-desc">
+          <h3>Informações</h3>
+          <ul>
+            <li><b>Nome:</b> ${patchEscape(cur.name)}</li>
+            <li><b>Ativação:</b> Steam</li>
+            <li><b>Tipo:</b> Chave de ativação digital</li>
+            <li><b>Imagem:</b> capa oficial da Steam via AppID ${patchSteamId(cur)||'—'}</li>
+          </ul>
+        </div>
+      </div>`;
+    document.querySelectorAll('.variant').forEach(el=>el.addEventListener('click',()=>{selected=variants.find(v=>v.id===el.dataset.var)||variants[0];draw();}));
+  }
+  draw();
+  overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+  hydratePricesFor([cur]);
+};
+
+closeModal = function(){
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow='';
+};
+
+function showAllGames(){
+  activeFilter='all'; activeCat=null; query=''; PATCH_DISPLAY_LIMIT=84;
+  const inp=document.getElementById('searchInput'); if(inp)inp.value='';
+  render();
+  document.getElementById('grid')?.scrollIntoView({block:'start'});
+}
+
+const oldSetCat = setCat;
+setCat = function(c){
+  activeCat=activeCat===c?null:c;
+  activeFilter='all'; query=''; PATCH_DISPLAY_LIMIT=84;
+  const inp=document.getElementById('searchInput'); if(inp)inp.value='';
+  render(); closeMenu();
+  document.getElementById('grid')?.scrollIntoView({block:'start'});
+};
+
+featCardHTML = function(g,idx=0){
+  const p=priceSet(g), now=selectedPrice(g);
+  return `<div class="feat-card" onclick="openModalByKey('${patchEscape(String(g.id))}')">
+    <div class="feat-img">${coverStackHTML(g,{loading:idx<8?'eager':'lazy'})}</div>
+    <div class="feat-body">
+      <div class="feat-name">${patchEscape(g.name)}</div>
+      <div class="price-line"><div class="price-copy"><span class="price-now">${patchBRL(now)}+</span><span class="price-pix">À vista no Pix</span></div>${pixIcon()}</div>
+      <button class="feat-btn">Comprar agora</button>
+    </div>
+  </div>`;
+};
+renderFeatured = function(){
+  const launches=GAMES.filter(g=>g.launch).slice(0,32);
+  const priority=['Counter-Strike 2','Dota 2','PUBG','Apex','Rust','Black Myth','Schedule I','R.E.P.O.','EA SPORTS FC 26','GTA','Forza','Assassin','Resident Evil','LEGO','Cyberpunk','Elden Ring'];
+  const topGames=[];
+  for(const term of priority){
+    for(const g of GAMES) if(patchNorm(g.name).includes(patchNorm(term)) && !topGames.includes(g)) topGames.push(g);
+  }
+  document.getElementById('featLaunch').innerHTML=launches.slice(0,28).map(featCardHTML).join('');
+  document.getElementById('featTop').innerHTML=topGames.slice(0,36).map(featCardHTML).join('');
+  hydratePricesFor(launches.slice(0,16).concat(topGames.slice(0,16)));
+};
+
+document.getElementById('searchInput')?.addEventListener('input',e=>{PATCH_DISPLAY_LIMIT=84; query=e.target.value.trim(); if(query.length>=3)loadSteamCatalog();},{passive:true});
+renderFeatured();
+render();
+</script>
+
+</body>
+</html>
